@@ -28,6 +28,15 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -106,6 +115,10 @@
       </div>
     </div>
   </header>
+ 
+  <!-- Cinematic Scroll Depth Vignettes -->
+  <div class="cinematic-scroll-vignette vignette-top" aria-hidden="true"></div>
+  <div class="cinematic-scroll-vignette vignette-bottom" aria-hidden="true"></div>
 
   <!-- Mobile Menu Drawer -->
   <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
