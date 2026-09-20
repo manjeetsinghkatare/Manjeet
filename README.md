@@ -20,7 +20,7 @@ A modern, high-performance personal portfolio website built with semantic HTML5,
 - **🌓 Dual-Theme System**: Seamless dark and light mode toggle with local storage persistence and ambient halo lighting.
 - **⚡ Dual-Discipline Synergy**: Custom visual module highlighting the intersection between data-driven performance marketing (CAC, ROAS, attribution) and creative multimedia production (video editing, motion graphics, spatial audio).
 - **🛠️ Visual Software Toolkit**: Interactive technology stack featuring official vector SVG brand icons (Adobe Photoshop, Premiere Pro, After Effects, Canva Pro, Meta Ads, Google Ads, HubSpot, Google Search Console, Google Analytics, Power BI, GitHub, WordPress, Excel).
-- **🎬 YouTube Channel & Creative Showcase**: Dedicated multimedia section (`#creatives`) highlighting official YouTube channel work (`@manjeetsinghkatare`), 8D spatial audio, Valorant and PUBG gaming montages, and video editing tutorials.
+- **🎬 YouTube Channel & Creative Showcase**: Dedicated multimedia section (`#creatives`) highlighting official YouTube channel work (`@manjeetsinghkatare`), 8D spatial audio, Valorant gaming montages, 4K music video productions, and video editing tutorials.
 - **💼 Interactive Project Explorer**: Dynamic modal dialogs with rich project deep dives, methodology breakdowns, key deliverables, and client outcomes.
 - **🎓 Vertical Credentials Engine**: 4 academic degrees and 18 verified industry certifications organized across responsive, categorized subgrids with modal verification previews.
 - **📄 Decoupled ATS-Friendly Resume**: Printable, single-page resume layout accessible at `/resume.html` driven by a modular data file (`data/resume-data.js` & `data/resume.json`).

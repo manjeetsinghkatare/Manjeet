@@ -1,285 +1,144 @@
 /**
  * ==========================================================================
- * MANJEET SINGH KATARE — RESUME DATA CONFIGURATION
+ * MANJEET SINGH — RESUME DATA CONFIGURATION
  * ==========================================================================
- * 
- * HOW TO UPDATE YOUR RESUME IN 30 SECONDS:
- * 1. Open this file (data/resume-data.js) in any text editor or on GitHub.com.
- * 2. Edit, add, or remove items in the sections below:
- *    - To add a new certificate: Copy an existing block in "certifications" and paste it.
- *    - To add a new job/role: Copy a block in "experience" and fill in your details.
- *    - To update your skills: Add new skill strings inside quotes into the "skills" list.
- * 3. Save (or click "Commit changes" on GitHub).
- * 4. Your resume page (resume.html) will update AUTOMATICALLY without touching any HTML!
- * 
- * When deployed on Vercel, every GitHub commit triggers an automatic live update in ~15 seconds.
+ * Matches the official uploaded Resume PDF exactly.
  * ==========================================================================
  */
 
 const RESUME_DATA = {
-  // --- Personal Contact Information ---
   personal: {
-    name: "Manjeet Singh Katare",
-    title: "MBA Candidate (Marketing & HR) | Digital Marketing & Creative Specialist",
-    location: "Gwalior, Madhya Pradesh, India (474006)",
+    name: "Manjeet Singh",
     email: "manjeetsinghkatare@gmail.com",
-    phone: "+91 88780 14861",
+    phone: "+91 8878014861",
+    location: "Gwalior, India 474006",
     linkedin: "https://www.linkedin.com/in/manjeet-singh-katare/",
-    linkedinLabel: "linkedin.com/in/manjeet-singh-katare",
-    youtube: "https://www.youtube.com/@manjeetsinghkatare/featured",
-    youtubeLabel: "youtube.com/@manjeetsinghkatare"
+    linkedinLabel: "Manjeet Singh Katare"
   },
 
-  // --- Professional Summary ---
-  summary: "Dynamic and analytical MBA Marketing & HR Candidate with proven practical experience in search engine optimization (SEO), Meta & Google Ads performance campaigns, content marketing, and creative digital media. Hands-on expertise managing SEO submissions for 5+ businesses at Youthmonk, spearheading paid lead generation campaigns reaching 10K+ followers at VedAlex, and coordinating institutional marketing events. Certified by Google (Ads Search), HubSpot (Digital & Inbound Marketing), IIT ISM Dhanbad / NPTEL Elite (Advertising & Promotions), and SkillCourse (Power BI).",
+  careerObjective: "MBA candidate specializing in Marketing and HR, bringing real-world experience in SEO, digital branding, and Meta Ads. Ready to use creative skills and practical marketing knowledge to run successful campaigns and deliver real results. Seeking an entry level Digital Marketing Content Marketing role.",
 
-  // --- Education ---
   education: [
     {
-      degree: "Master of Business Administration (MBA) — Marketing & HR",
-      institution: "Prestige Institute of Management & Research (PIMR)",
-      location: "Gwalior, MP",
-      period: "Aug 2025 – Present",
-      bullets: [
-        "Active Member & Event Coordinator, <strong>PIMR Marketing Club</strong> (Coordinated 'Meta Ads Performance Marketing' workshop, April 2026).",
-        "Awarded Certificate of Achievement for the <strong>Corporate Readiness & Self Branding Boot Camp</strong> (Dec 2025).",
-        "Researched and authored MBA Community Engagement project on agricultural waste recycling and eco-furniture marketing strategy."
-      ]
+      degree: "Master of Business Administration (MBA)",
+      institution: "Prestige Institute of Management (Gwalior, MP)",
+      specialization: "Specialization - Marketing & HR",
+      period: "Aug 2025 – Present"
     },
     {
-      degree: "Bachelor of Business Administration (BBA) — Marketing Major",
-      institution: "Vikrant University",
-      location: "Gwalior, MP",
-      period: "Aug 2022 – July 2025",
-      bullets: [
-        "Coursework: Marketing Management, Consumer Behaviour, Advertising & Sales Promotion, Strategic Business Planning.",
-        "Represented university in inter-collegiate creative arts, stage anchoring, and media competitions at Amity and ITM."
-      ]
+      degree: "Bachelor of Business Administration (BBA)",
+      institution: "Vikrant University (Gwalior, MP)",
+      specialization: "Specialization - Marketing",
+      period: "August 2022 – July 2025"
     },
     {
       degree: "Diploma in Computer Application (DCA)",
-      institution: "Makhanlal Chaturvedi National University of Journalism and Communication",
-      location: "Bhopal, MP",
-      period: "May 2023 – Dec 2024",
-      bullets: []
+      institution: "Makhanlal Chaturvedi National University (Bhopal, MP)",
+      period: "May 2023 – December 2024"
     },
     {
-      degree: "Senior Secondary Certificate (12th Standard — PCB Stream)",
+      degree: "Senior Secondary Certificate (12th – PCB Stream)",
       institution: "St. Paul Convent School (MP Board)",
-      location: "Gwalior, MP",
-      period: "June 2021 – March 2022",
-      bullets: []
+      period: "June 2021 – March 2022"
     }
   ],
 
-  // --- Work & Internship Experience ---
-  experience: [
+  professionalExperience: [
     {
       role: "Content Writing & Digital Marketing Intern",
-      company: "Youthmonk Agency",
-      location: "Rajkot, Gujarat (Remote)",
-      period: "June 16, 2026 – September 16, 2026",
-      meta: "Verified 3-Month Internship",
+      company: "Youthmonk",
+      location: "Rajkot, Gujarat | Remote",
+      period: "June 2026 – Sep 2026",
       bullets: [
-        "Assisted in website development audits, keyword discovery, and executed on-page/off-page SEO directory submissions for <strong>5+ commercial client businesses</strong> to accelerate Google search indexing.",
-        "Authored keyword-optimized informational blog articles and content marketing guides targeting high-converting search intent.",
-        "Designed promotional marketing creatives and distributed multi-channel campaigns across Instagram, Facebook, X (Twitter), and LinkedIn.",
-        "Conducted competitor backlink audits, citation submissions, and anchor text distribution analysis to enhance domain authority."
-      ],
-      skills: ["SEO Strategy", "Keyword Research", "On-Page/Off-Page", "Backlink Building", "Blogging", "Content Marketing"]
+        "Managed website development, keyword research, and on-page/off-page SEO submissions for 5+ businesses, resulting in improved search visibility and organic rankings.",
+        "Created SEO-friendly blogs, articles, and viral social media posts across Instagram, Facebook, X, and LinkedIn to boost brand engagement."
+      ]
     },
     {
-      role: "Digital Marketing & Lead Generation Intern / Associate",
-      company: "VedAlex World Class Products Pvt. Ltd.",
-      location: "Jaipur, Rajasthan (Remote)",
+      role: "Digital Marketing Intern / Freelance Associate",
+      company: "VedAlex",
+      location: "Jaipur, Rajasthan | Remote",
       period: "Oct 2023 – Aug 2025",
-      meta: "Certified 6-Month Lead Gen Internship",
       bullets: [
-        "Configured and managed targeted <strong>Meta (Facebook/Instagram) and Google Ads campaigns</strong> combined with organic search methods to capture qualified consumer leads.",
-        "Actively managed brand social media channels, fostering an engaged online community of over <strong>10,000+ followers</strong>.",
-        "Designed and published <strong>30+ promotional posters, product flyers, and marketing assets</strong> using Canva and Adobe Photoshop, driving a verified <strong>40% boost in product reach</strong> and a <strong>35% increase in engagement</strong>."
-      ],
-      skills: ["Meta Ads Manager", "Google Ads", "Lead Generation", "Canva", "Photoshop", "Community Management"]
-    },
-    {
-      role: "Marketing Club Event Coordinator — Meta Ads Performance Workshop",
-      company: "Prestige Institute of Management & Research (PIMR)",
-      location: "Gwalior, MP",
-      period: "April 2026",
-      meta: "Institutional Leadership",
-      bullets: [
-        "Coordinated the high-impact institutional workshop on <strong>Meta Ads Performance Marketing</strong> organized by the PIMR Marketing Club for MBA cohorts and faculty.",
-        "Facilitated event structuring, audience engagement, campaign architecture walkthroughs, pixel tracking demos, and ROAS strategy sessions.",
-        "Awarded formal <strong>Certificate of Appreciation</strong> signed by Director Prof. (Dr.) Nirmalya Bandyopadhyay and faculty coordinators."
-      ],
-      skills: ["Meta Ads Manager", "Performance Marketing", "Event Coordination", "ROAS Strategy", "Marketing Leadership"]
-    },
-    {
-      role: "Digital Creator & Video Editor",
-      company: "YouTube (@manjeetsinghkatare)",
-      location: "Gwalior, MP",
-      period: "2021 – Present",
-      meta: "Independent Creative Media",
-      bullets: [
-        "Produced multi-channel video content including <strong>8D spatial audio music editing</strong> with dynamic binaural panning and reverb mastering.",
-        "Edited high-energy gaming montages for <strong>Valorant and PUBG</strong> featuring beat-synchronized frag sequences, motion blur, kinetic speed ramps, and sound design.",
-        "Authored creative video editing and visual effects tutorials demonstrating <strong>Adobe After Effects</strong> motion graphics and Premiere Pro workflows.",
-        "Completed freelance multimedia and graphic design projects for clients utilizing Adobe Premiere Pro, After Effects, Photoshop, Lightroom, and Canva."
-      ],
-      skills: ["Adobe Premiere Pro", "Adobe After Effects", "8D Audio Editing", "Gaming Montages", "Motion Graphics", "Photoshop", "YouTube Content"]
+        "Executed Meta and Google Ads campaigns and effective SEO strategies to rank the company high on Google and manage 10K+ followers.",
+        "Designed 30+ promotional posters and marketing creatives using Canva and Photoshop, increasing product reach by 40% and engagement by 35%."
+      ]
     }
   ],
 
-  // --- Core Skills & Tools ---
-  skills: [
-    {
-      category: "Digital Marketing & SEO",
-      items: "Search Engine Optimization (SEO), Keyword Research, On-Page & Off-Page SEO, Backlink Outreach, Directory Indexing, Meta Ads Manager, Google Ads Search, Social Media Marketing (SMM), Content Strategy, Inbound Funnels, Copywriting"
-    },
-    {
-      category: "Creative & Design",
-      items: "Adobe Photoshop, Canva, Adobe Premiere Pro, Adobe After Effects, Adobe Lightroom, Social Media Creatives, Poster & Flyer Design, Motion Graphics, Sound Design, Brand Identity Systems"
-    },
-    {
-      category: "Analytics & Software",
-      items: "Google Analytics, Microsoft Power BI, Microsoft Excel (VLOOKUP, Pivot Tables), WordPress CMS, Market Research, Consumer Behavior Analysis, Campaign Attribution, Competitive Benchmarking"
-    },
-    {
-      category: "Core Competencies",
-      items: "Strategic Communication, Event Coordination, Stage Anchoring & Public Speaking, Creative Problem Solving, Team Collaboration, Adaptability, English (Professional), Hindi (Native)"
-    }
-  ],
+  keySkills: {
+    tools: [
+      "Canva",
+      "Adobe Photoshop",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "MS Excel",
+      "Meta Ads Manager",
+      "Google Analytics"
+    ],
+    digitalMarketing: [
+      "SMM",
+      "SEO",
+      "Content Writing",
+      "Copywriting",
+      "Content Marketing",
+      "Meta & Google Ads"
+    ],
+    softSkills: [
+      "Communication",
+      "Creativity",
+      "Teamwork",
+      "Problem Solving",
+      "Adaptability",
+      "Time Management"
+    ]
+  },
 
-  // --- Verified Industry Certifications (18 Authentic Credentials) ---
   certifications: [
     {
-      title: "Advertising & Promotions Management (Elite)",
-      issuer: "NPTEL / MoE, Govt. of India / Swayam (IIT ISM Dhanbad)",
-      date: "Jan – Apr 2026",
-      id: "Roll: NPTEL26MG28S155700272 | Elite Score: 64%"
-    },
-    {
       title: "Google Ads Search Certification",
-      issuer: "Google Skillshop",
-      date: "Sep 2026 – Sep 2027",
-      id: "Credential ID: 193516036"
+      issuer: "Google",
+      details: "Optimizing search campaigns for targeted traffic."
     },
     {
-      title: "Digital Marketing Certified",
-      issuer: "HubSpot Academy",
-      date: "Sep 2026 – Oct 2028",
-      id: "Code: 8d4de8cc9cc8431ab7821b39c78ab39c"
+      title: "Digital Marketing Certification",
+      issuer: "HubSpot",
+      details: "Trained in SEO, social strategy, and analytics."
     },
     {
-      title: "Inbound Marketing Certified",
-      issuer: "HubSpot Academy",
-      date: "Sep 2026 – Oct 2028",
-      id: "Code: c3c3d3322f614e23b4113d8589aa3600"
+      title: "Inbound Marketing Certification",
+      issuer: "HubSpot",
+      details: "Focused on content creation and lead nurturing."
     },
     {
-      title: "Meta Ads Workshop Event Coordinator",
-      issuer: "Prestige Institute of Management & Research (Marketing Club)",
-      date: "April 2026",
-      id: "Certificate of Appreciation (Director & Faculty)"
-    },
-    {
-      title: "Digital Marketing Internship Completion Certificate",
-      issuer: "Youthmonk Agency (Rajkot & Mumbai)",
-      date: "June 16 – Sep 16, 2026",
-      id: "3-Month SMM, SEO, Content Marketing & Blogging Internship"
-    },
-    {
-      title: "Lead Generation & Marketing Internship Certificate",
-      issuer: "VedAlex World Class Products Pvt. Ltd. (Jaipur)",
-      date: "Oct 2023 – Aug 2025",
-      id: "Certified 6-Month Lead Gen & Social Ads Internship"
-    },
-    {
-      title: "Self Branding & Corporate Readiness Boot Camp",
-      issuer: "Prestige Institute of Management & Research (PIMR)",
-      date: "Dec 2025",
-      id: "MBA (FT) Achievement Certificate"
-    },
-    {
-      title: "TATA GenAI Data Analytics Job Simulation",
-      issuer: "TATA Group (via Forage)",
-      date: "Sep 2026",
-      id: "Verification Code: 6aa122bd72c3c3711160afc1"
-    },
-    {
-      title: "Accenture Project Management Simulation",
-      issuer: "Accenture North America (via Forage)",
-      date: "Feb 2025",
-      id: "Verification Code: wis5Tw37ChcKYeiQp"
-    },
-    {
-      title: "NSW Marketing & Strategic Communication",
-      issuer: "NSW Government (via Forage)",
-      date: "Aug 2025",
-      id: "Verification Code: YgjTeetEmi9Tx2ggX"
-    },
-    {
-      title: "HP LIFE Agile Project Management",
-      issuer: "HP Foundation (HP LIFE)",
-      date: "Jan 2025",
-      id: "Serial: 33d5a0c6-54d8-41cd-9cae-9879a42a2455"
-    },
-    {
-      title: "30 Days Power BI Micro Course",
-      issuer: "SkillCourse (ISO 9001:2015 Certified)",
-      date: "Sep 2026",
-      id: "Certificate ID: SC-8K2T6R6PIP"
-    },
-    {
-      title: "Effective Communication Specialization (4 Courses)",
-      issuer: "University of Colorado Boulder (Coursera)",
-      date: "Jun 2022",
-      id: "Credential ID: JVLDSKYFJ9MK"
-    },
-    {
-      title: "Graphic Design Coursework",
-      issuer: "University of Colorado Boulder (Coursera)",
-      date: "Mar 2022",
-      id: "Authorized by David Underwood, UC Boulder"
-    },
-    {
-      title: "Sales Pitch and Closing",
-      issuer: "Northwestern University (Kellogg School of Management)",
-      date: "May 2022",
-      id: "Credential ID: 6L9Z2XBMPJK4"
-    },
-    {
-      title: "Sales Training: Building Your Sales Career",
-      issuer: "HubSpot Academy (Coursera)",
-      date: "Jun 2022",
-      id: "Credential ID: 9Q66QN954HQF"
-    },
-    {
-      title: "Managing Project Risks and Changes",
-      issuer: "University of California, Irvine (UCI)",
-      date: "Jun 2022",
-      id: "Credential ID: TKKHYKBZ3LBW"
-    },
-    {
-      title: "Africa Youth Day Program",
-      issuer: "Nestlé Connect (Nestlé needs YOUth)",
-      date: "2022",
-      id: "Official Global Forum Certificate of Completion"
+      title: "Meta Blueprint (Digital Marketing Associate)",
+      issuer: "Meta",
+      details: "Executing and analyzing ad campaigns."
     }
   ],
 
-  // --- Featured Academic & Applied Projects ---
-  projects: [
-    {
-      title: "PaddyCraft: Paddy Straw Recycling for Eco-Furniture",
-      organization: "Prestige Institute of Management & Research (PIMR Gwalior)",
-      period: "2025 – 2026",
-      description: "Collaborative Community Engagement Report assessing supply chain viability, consumer adoption, and marketing strategy to curb crop residue burning by converting paddy straw into sustainable, commercial furniture."
-    }
+  achievements: [
+    "Created and run a personal YouTube channel producing music remixes, EDM tracks, montages, and Adobe After Effects tutorials. Completed freelance graphic design projects using Adobe Photoshop, Lightroom, Premiere Pro, and After Effects."
+  ],
+
+  extracurricular: [
+    "Represented Vikrant University in inter-university events and anchoring activities.",
+    "Participated in inter-university art competitions at Amity, Jiwaji, and ITM University."
+  ],
+
+  interests: [
+    "Graphic Design",
+    "Gaming",
+    "Working Out",
+    "Automotive Mechanics & Driving"
+  ],
+
+  languages: [
+    "English (Professional)",
+    "Hindi (Native)"
   ]
 };
 
-// Export for Node/CommonJS environments if needed
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = RESUME_DATA;
 }

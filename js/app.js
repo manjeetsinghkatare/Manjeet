@@ -157,44 +157,74 @@ function initPortfolioFilters() {
 const projectDetails = {
   // --- Digital Marketing & SEO Work ---
   'youthmonk-seo': {
-    title: '5+ Business Websites: Multi-Channel SEO & Content Strategy',
-    category: 'Digital Marketing & SEO',
-    org: 'Youthmonk (Rajkot, Gujarat)',
+    title: '5+ Business Websites: Multi-Sector SEO, Blog Publishing & Backlinking',
+    category: 'Digital Marketing & Organic SEO',
+    org: 'Agency Client Portfolio (Youthmonk)',
     role: 'Content Writing & Digital Marketing Intern (June 16 – Sep 16, 2026)',
-    tools: 'Google Analytics, Search Console, Keyword Planner, SEO On-Page/Off-Page, Directory Indexing',
-    outcome: 'Ranked commercial client websites on page 1 of Google organic search, generating continuous qualified inbound leads.',
-    image: 'assets/images/work/medical_seo_campaign.jpg',
-    desc: 'Executed comprehensive on-page and off-page SEO optimization for 5+ client businesses. Conducted exhaustive keyword research, meta tag architecture, search console audits, citation submissions, high-DA backlink building, and high-converting blog content.'
+    tools: 'Google Search Console, Keyword Planner, High-DA Backlinks, Blog Publishing, Technical SEO',
+    outcome: 'Ranked 5+ commercial client websites on page 1 of Google search, driving continuous keyword growth and qualified inbound leads.',
+    image: 'assets/images/work/seo_multi_business_analytics.jpg',
+    desc: 'Delivered comprehensive organic search marketing across 5+ commercial client businesses. Key activities included on-page and technical website SEO audits, targeted keyword research, structuring and publishing regular SEO-optimized blog posts, building authoritative external backlinks and directory citations, and monitoring organic ranking trajectories to maintain steady keyword growth.'
+  },
+  'dermatology-seo': {
+    title: 'Dermatology & Clinical Skincare: Digital Marketing, SEO & Backlinking',
+    category: 'Healthcare SEO & Digital Marketing',
+    org: 'Confidential Healthcare Client (Dermatology Sector)',
+    role: 'Digital Marketing & SEO Associate',
+    tools: 'On-Page SEO, Medical Backlinking, Search Console, Local Citation Building, Content Marketing',
+    outcome: 'Significantly improved organic search discovery for specialized skincare treatments and generated steady qualified consultation inquiries.',
+    image: 'assets/images/work/dermatology_skincare_clinic.jpg',
+    desc: 'Executed an end-to-end digital marketing and search optimization program for a specialized dermatology and clinical skincare practice. Core responsibilities included identifying high-intent treatment queries, optimizing on-page service pages, acquiring high-quality healthcare backlinks, managing local business citations, and publishing informative skincare content designed to guide prospective patients through consultation booking.'
   },
   'prp-hair-creative': {
-    title: 'Healthcare & Clinical Content Marketing & Social SEO',
-    category: 'Digital Marketing & Creative',
-    org: 'Youthmonk / Healthcare Client',
-    role: 'Digital Marketing & Creative Associate',
-    tools: 'Canva, Photoshop, Content Marketing, Pinterest/Social SEO',
-    outcome: 'Expanded patient reach and discovery through visual search optimization and educational clinical content.',
-    image: 'assets/images/work/prp_hair_seo_creative.png',
-    desc: 'Created branded educational visuals, infographics, and informative pins explaining clinical procedures and timelines, building high patient trust and generating organic consultation inquiries.'
+    title: 'Dermatology & Clinical Skincare: Digital Marketing, SEO & Backlinking',
+    category: 'Healthcare SEO & Digital Marketing',
+    org: 'Confidential Healthcare Client (Dermatology Sector)',
+    role: 'Digital Marketing & SEO Associate',
+    tools: 'On-Page SEO, Medical Backlinking, Search Console, Local Citation Building, Content Marketing',
+    outcome: 'Significantly improved organic search discovery for specialized skincare treatments and generated steady qualified consultation inquiries.',
+    image: 'assets/images/work/dermatology_skincare_clinic.jpg',
+    desc: 'Executed an end-to-end digital marketing and search optimization program for a specialized dermatology and clinical skincare practice. Core responsibilities included identifying high-intent treatment queries, optimizing on-page service pages, acquiring high-quality healthcare backlinks, managing local business citations, and publishing informative skincare content designed to guide prospective patients through consultation booking.'
+  },
+  'b2b-interior-seo': {
+    title: 'B2B Interior Architecture & Custom Furniture: SEO & Digital Marketing',
+    category: 'B2B SEO & Digital Marketing',
+    org: 'Confidential B2B Commercial Client (Interior & Furniture Design)',
+    role: 'Content Marketing & SEO Strategist',
+    tools: 'B2B Keyword Research, Commercial Backlinking, Long-Tail SEO, On-Page Optimization, Google Analytics',
+    outcome: 'Secured top organic search visibility for high-ticket commercial interior, exterior design, and bespoke corporate wooden furniture inquiries.',
+    image: 'assets/images/work/b2b_interior_furniture_design.jpg',
+    desc: 'Managed comprehensive SEO and digital marketing initiatives for a commercial design firm providing corporate interior/exterior architecture and bespoke wooden furniture craft for enterprises. Developed an exhaustive keyword strategy around commercial fit-outs and architectural woodworking, built authoritative industry backlinks, optimized service landing pages, and published B2B case studies to capture high-value enterprise contracts.'
   },
   'mumbai-coworking': {
-    title: 'Commercial Coworking Hub: B2B Long-Tail SEO Guide',
-    category: 'Content Marketing & SEO',
-    org: 'Youthmonk / Commercial Real Estate Client',
-    role: 'Content Writer & SEO Strategist',
-    tools: 'Content Syndication, Long-tail Keyword Targeting, Competitor Gap Analysis',
-    outcome: 'Captured high-intent commercial search traffic across competitive Mumbai business zones.',
-    image: 'assets/images/work/mumbai_coworking_seo.png',
-    desc: 'Researched business hub dynamics and produced in-depth commercial guides targeting entrepreneurs, startups, and expanding corporate teams seeking flexible workspaces in Mumbai.'
+    title: 'B2B Interior Architecture & Custom Furniture: SEO & Digital Marketing',
+    category: 'B2B SEO & Digital Marketing',
+    org: 'Confidential B2B Commercial Client (Interior & Furniture Design)',
+    role: 'Content Marketing & SEO Strategist',
+    tools: 'B2B Keyword Research, Commercial Backlinking, Long-Tail SEO, On-Page Optimization, Google Analytics',
+    outcome: 'Secured top organic search visibility for high-ticket commercial interior, exterior design, and bespoke corporate wooden furniture inquiries.',
+    image: 'assets/images/work/b2b_interior_furniture_design.jpg',
+    desc: 'Managed comprehensive SEO and digital marketing initiatives for a commercial design firm providing corporate interior/exterior architecture and bespoke wooden furniture craft for enterprises. Developed an exhaustive keyword strategy around commercial fit-outs and architectural woodworking, built authoritative industry backlinks, optimized service landing pages, and published B2B case studies to capture high-value enterprise contracts.'
+  },
+  'orthopedic-seo': {
+    title: 'Orthopedic & Joint Care Clinic: SEO, Backlinking & Keyword Growth',
+    category: 'Medical & Healthcare SEO',
+    org: 'Confidential Healthcare Client (Orthopedic & Joint Care)',
+    role: 'Healthcare SEO & Digital Marketing Specialist',
+    tools: 'Healthcare SEO, Medical Directory Indexing, High-DA Backlinks, Long-Tail Keyword Discovery, Search Console',
+    outcome: 'Achieved high organic rankings for orthopedic, joint mobility, and bone care search terms, increasing prospective patient inquiries.',
+    image: 'assets/images/work/orthopedic_bone_healthcare.jpg',
+    desc: 'Developed and executed a targeted organic search engine optimization and digital marketing strategy for an orthopedic and bone-health clinic. Focused on optimizing search visibility for orthopedic procedures, joint care, and musculoskeletal treatments. Built authoritative medical and directory backlinks, conducted deep keyword research targeting condition-specific queries, and created patient-friendly medical content to build clinical trust and drive appointment bookings.'
   },
   'body-contouring': {
-    title: 'Wellness & Aesthetic Clinic Growth Strategy',
-    category: 'Digital Marketing & Creatives',
-    org: 'Youthmonk / Aesthetic Wellness Client',
-    role: 'Digital Marketing Intern',
-    tools: 'Photoshop, Canva, Local SEO, Audience Profiling',
-    outcome: 'High audience retention and conversion rate from organic informational discovery to appointment bookings.',
-    image: 'assets/images/work/body_contouring_seo.png',
-    desc: 'Designed sleek, clinic-grade educational creatives paired with localized search intent to answer prospective client queries, demystify treatments, and drive bookings.'
+    title: 'Orthopedic & Joint Care Clinic: SEO, Backlinking & Keyword Growth',
+    category: 'Medical & Healthcare SEO',
+    org: 'Confidential Healthcare Client (Orthopedic & Joint Care)',
+    role: 'Healthcare SEO & Digital Marketing Specialist',
+    tools: 'Healthcare SEO, Medical Directory Indexing, High-DA Backlinks, Long-Tail Keyword Discovery, Search Console',
+    outcome: 'Achieved high organic rankings for orthopedic, joint mobility, and bone care search terms, increasing prospective patient inquiries.',
+    image: 'assets/images/work/orthopedic_bone_healthcare.jpg',
+    desc: 'Developed and executed a targeted organic search engine optimization and digital marketing strategy for an orthopedic and bone-health clinic. Focused on optimizing search visibility for orthopedic procedures, joint care, and musculoskeletal treatments. Built authoritative medical and directory backlinks, conducted deep keyword research targeting condition-specific queries, and created patient-friendly medical content to build clinical trust and drive appointment bookings.'
   },
   'vedalex-lead-gen': {
     title: 'Paid Ads Performance, Brand Growth & 30+ Promotional Assets',
@@ -223,10 +253,10 @@ const projectDetails = {
     category: 'Video Editing & Creative Production',
     org: 'YouTube (@manjeetsinghkatare)',
     role: 'Digital Creator, Video Editor & Motion Graphics Designer',
-    tools: 'Adobe Premiere Pro, Adobe After Effects, 8D Spatial Audio, Photoshop, Sound Design',
-    outcome: 'Produced 8D audio mixes, high-energy Valorant & PUBG frag montages, and video editing tutorials.',
-    image: 'assets/images/work/youtube_channel_art.png',
-    desc: 'Engineered immersive 8D spatial audio tracks with binaural panning and reverb mastering. Edited cinematic gaming montages for Valorant and PUBG featuring beat-synchronized kill sequences, speed ramping, motion blur, and kinetic visual transitions. Authored motion graphics and video editing tutorials demonstrating Adobe After Effects and Premiere Pro techniques.'
+    tools: 'Adobe Premiere Pro, Adobe After Effects, 8D Spatial Audio, Sound Design, 4K Video Production',
+    outcome: 'Produced popular 8D audio mixes (8K+ views), beat-synced Valorant gaming montages, After Effects tutorials, and 4K music edits.',
+    image: 'assets/images/work/youtube_channel_showcase.jpg',
+    desc: 'Engineered immersive 8D spatial audio tracks with 360-degree binaural panning and sub-bass enhancement for tracks by Shubh and Sidhu Moose Wala. Edited cinematic gaming montages for Valorant featuring beat-synchronized cuts, velocity re-timing, and visual impact effects. Produced 4K music video edits (Ram Mere Sage Hindi Rap) and authored Adobe After Effects tutorials demonstrating VFX and motion graphics workflows.'
   },
   'uc-graphic-design': {
     title: 'Graphic Design Coursework & Visual Identity Systems',
