@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initModalLightbox();
   initContactForm();
   initScrollSpy();
-  initCinematicScroll();
 });
 
 /* ==========================================================================
@@ -113,7 +112,8 @@ function initMobileMenu() {
 
   hamburgerBtn.addEventListener('click', toggleMenu);
 
-  mobileNavLinks.forEach(link => {
+  const drawerLinks = mobileDrawer.querySelectorAll('a');
+  drawerLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (mobileDrawer.classList.contains('open')) {
         toggleMenu();
@@ -626,20 +626,4 @@ function initScrollSpy() {
   });
 
   sections.forEach(section => observer.observe(section));
-}
-
-/* ==========================================================================
-   7. Cinematic Scroll Blur Effect
-   ========================================================================== */
-function initCinematicScroll() {
-  let scrollTimeout = null;
-  window.addEventListener('scroll', () => {
-    if (!document.body.classList.contains('is-scrolling')) {
-      document.body.classList.add('is-scrolling');
-    }
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      document.body.classList.remove('is-scrolling');
-    }, 130);
-  }, { passive: true });
 }
