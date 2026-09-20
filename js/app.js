@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModalLightbox();
   initContactForm();
   initScrollSpy();
+  initMobileHeaderScroll();
 });
 
 /* ==========================================================================
@@ -626,4 +627,48 @@ function initScrollSpy() {
   });
 
   sections.forEach(section => observer.observe(section));
+}
+
+/* ==========================================================================
+   8. Mobile-Only Responsive Header Scroll (Hide on scroll down, show on scroll up)
+   ========================================================================== */
+function initMobileHeaderScroll() {
+  const siteHeader = document.querySelector('.site-header');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  if (!siteHeader) return;
+
+  let lastScrollY = window.scrollY || window.pageYOffset;
+  const scrollThreshold = 8;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY || window.pageYOffset;
+    const isMobile = window.innerWidth <= 768;
+    const isDrawerOpen = mobileDrawer && mobileDrawer.classList.contains('open');
+
+    // On desktop, laptop, and tablet (> 768px), or when mobile drawer is open: keep header visible
+    if (!isMobile || isDrawerOpen) {
+      siteHeader.classList.remove('header-hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Near the top of the page: keep header visible
+    if (currentScrollY <= 40) {
+      siteHeader.classList.remove('header-hidden');
+    } else if (currentScrollY > lastScrollY + scrollThreshold) {
+      // User is scrolling down on mobile: hide header to maximize screen space
+      siteHeader.classList.add('header-hidden');
+    } else if (currentScrollY < lastScrollY - scrollThreshold) {
+      // User is scrolling upward: smoothly reveal header
+      siteHeader.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      siteHeader.classList.remove('header-hidden');
+    }
+  });
 }
