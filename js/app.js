@@ -132,26 +132,49 @@ function initMobileMenu() {
 function initPortfolioFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.portfolio-card');
+  const grid = document.querySelector('.portfolio-grid');
 
   if (!filterBtns.length || !cards.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      if (btn.classList.contains('active')) return;
+
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
 
       const filterValue = btn.getAttribute('data-filter');
+
+      // Trigger subtle filter transition (blur -> fade -> clear)
+      if (grid && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        grid.classList.add('is-filtering');
+      }
 
       cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category') || '';
         if (filterValue === 'all' || cardCategory.includes(filterValue)) {
           card.style.display = 'flex';
-          card.style.opacity = '1';
+          card.style.opacity = '';
+          card.removeAttribute('aria-hidden');
         } else {
           card.style.display = 'none';
-          card.style.opacity = '0';
+          card.style.opacity = '';
+          card.setAttribute('aria-hidden', 'true');
         }
       });
+
+      // Smoothly resolve back to resting state
+      if (grid) {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            grid.classList.remove('is-filtering');
+          }, 25);
+        });
+      }
     });
   });
 }
@@ -730,10 +753,14 @@ function initScrollReveal() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
 
+  // On mobile (<=768px), bypass scroll reveal completely so all content is 100% visible on initial load
+  if (window.innerWidth <= 768) return;
+
+  // Large grids and multi-item blocks are explicitly excluded to prevent any tall element threshold bugs
   const revealTargets = document.querySelectorAll(
     '.section-header, .about-text, .about-stats-grid, .about-synergy-banner, ' +
-    '.timeline-item, .portfolio-filter-bar, .portfolio-grid, .yt-spotlight-card, ' +
-    '.yt-videos-grid, .skills-grid, .credentials-block, .contact-info-panel, .contact-form-card'
+    '.timeline-item, .portfolio-filter-bar, .yt-spotlight-card, ' +
+    '.skills-grid, .contact-info-panel, .contact-form-card'
   );
 
   if (!revealTargets.length) return;
@@ -751,8 +778,8 @@ function initScrollReveal() {
       }
     });
   }, {
-    threshold: 0.08,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0,
+    rootMargin: '0px 0px -15px 0px'
   });
 
   revealTargets.forEach(el => {

@@ -1248,6 +1248,23 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-grid.is-filtering {
+  opacity: 0.88;
+  filter: blur(1.5px);
+  transform: translateY(6px);
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid.is-filtering {
+    filter: none;
+    opacity: 0.92;
+    transform: translateY(4px);
+  }
 }
 
 .portfolio-card {
@@ -3320,26 +3337,29 @@ ul {
   }
 }
 
-/* --- 2. Lightweight Scroll Reveal --- */
-/* Elements remain 100% visible by default; .js-reveal is added dynamically only once JS initializes */
-.js-reveal .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
+/* --- 2. Lightweight Scroll Reveal (Desktop only) --- */
+/* Elements remain 100% visible by default; .js-reveal is added dynamically only on desktop (>768px) */
+@media (min-width: 769px) {
+  .js-reveal .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
 
-.js-reveal .reveal-on-scroll.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-  will-change: auto;
+  .js-reveal .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Ultra-gentle 8px reveal on mobile devices */
-  .js-reveal .reveal-on-scroll {
-    transform: translateY(8px);
-    transition-duration: 0.4s;
+  /* On mobile: all elements are guaranteed 100% visible at all times! Zero stuck opacity */
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 }
 
@@ -3400,6 +3420,14 @@ ul {
   }
 
   .nav-link::after {
+    transition: none !important;
+  }
+
+  .portfolio-grid,
+  .portfolio-grid.is-filtering {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
     transition: none !important;
   }
 }
