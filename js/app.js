@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollSpy();
   initMobileHeaderScroll();
+  initCertGallery();
 });
 
 /* ==========================================================================
@@ -669,6 +670,40 @@ function initMobileHeaderScroll() {
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
       siteHeader.classList.remove('header-hidden');
+    }
+  });
+}
+
+/* ==========================================================================
+   9. Certifications Gallery & Progressive Disclosure Toggle
+   ========================================================================== */
+function initCertGallery() {
+  const toggleBtn = document.getElementById('toggleAllCertsBtn');
+  const collapsible = document.getElementById('allCertsCollapsible');
+  if (!toggleBtn || !collapsible) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = collapsible.classList.contains('open');
+
+    if (!isOpen) {
+      collapsible.classList.add('open');
+      collapsible.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.innerHTML = '<span class="cert-btn-text">Show Fewer Certifications &uarr;</span>';
+    } else {
+      collapsible.classList.remove('open');
+      collapsible.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.innerHTML = '<span class="cert-btn-text">View All Certifications (18) &rarr;</span>';
+
+      // Keep user oriented if they collapsed after scrolling down
+      const certHeader = document.querySelector('.credentials-block-header');
+      if (certHeader) {
+        const headerRect = certHeader.getBoundingClientRect();
+        if (headerRect.top < 0) {
+          certHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
   });
 }
