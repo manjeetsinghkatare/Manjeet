@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initMobileHeaderScroll();
   initCertGallery();
+  initScrollReveal();
+  initSectionNavTransition();
 });
 
 /* ==========================================================================
@@ -235,7 +237,7 @@ const projectDetails = {
     org: 'VedAlex World Class Products Pvt. Ltd.',
     role: 'Digital Marketing & Lead Generation Intern / Associate (Oct 2023 – Aug 2025)',
     tools: 'Meta Ads Manager, Google Ads, Organic SEO, Canva, Photoshop',
-    outcome: 'Managed community of 10K+ followers; increased product reach by 40% and engagement by 35% with 30+ creatives.',
+    outcome: 'Managed community of 10K+ followers; contributed to campaigns that delivered a 40% increase in product reach and 35% in engagement with 30+ promotional creatives.',
     image: 'assets/images/certificates/vedalex_internship.png',
     desc: 'Configured and tracked multi-channel Meta (Facebook/Instagram) and Google Ads campaigns, produced 30+ promotional flyers and marketing banners, and executed organic audience growth strategies.'
   },
@@ -383,7 +385,7 @@ const projectDetails = {
     tools: 'Meta Ads, Google Ads, Organic SEO, Social Management, Graphic Design',
     outcome: 'Official Certificate signed by Vinki Walia (Senior General Manager)',
     image: 'assets/images/certificates/vedalex_internship.png',
-    desc: 'Certified 6-month internship orchestrating paid advertising campaigns, managing a community of 10K+ followers, and designing 30+ promotional creatives.'
+    desc: 'Certified 6-month internship executing and contributing to paid advertising campaigns, managing a community of 10K+ followers, and designing 30+ promotional creatives.'
   },
   'cert-pimr-meta-ads': {
     title: 'PIMR Certificate of Appreciation — Meta Ads Event Coordinator',
@@ -624,10 +626,23 @@ function initScrollSpy() {
       }
     });
   }, {
-    rootMargin: '-20% 0px -70% 0px'
+    rootMargin: '-20% 0px -65% 0px'
   });
 
   sections.forEach(section => observer.observe(section));
+
+  // If user scrolls to the very bottom, ensure #contact is active
+  window.addEventListener('scroll', () => {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 60)) {
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === '#contact') {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }, { passive: true });
 }
 
 /* ==========================================================================
@@ -707,3 +722,86 @@ function initCertGallery() {
     }
   });
 }
+
+/* ==========================================================================
+   10. Lightweight Scroll Reveal (Viewport entry animation for grouped blocks)
+   ========================================================================== */
+function initScrollReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  const revealTargets = document.querySelectorAll(
+    '.section-header, .about-text, .about-stats-grid, .about-synergy-banner, ' +
+    '.timeline-item, .portfolio-filter-bar, .portfolio-grid, .yt-spotlight-card, ' +
+    '.yt-videos-grid, .skills-grid, .credentials-block, .contact-info-panel, .contact-form-card'
+  );
+
+  if (!revealTargets.length) return;
+
+  revealTargets.forEach(el => el.classList.add('reveal-on-scroll'));
+
+  // Enable CSS reveal rules now that elements are identified
+  document.documentElement.classList.add('js-reveal');
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealTargets.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-revealed');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
+}
+
+/* ==========================================================================
+   11. Section Navigation Transition (Subtle arrival blur/fade/movement)
+   ========================================================================== */
+function initSectionNavTransition() {
+  const navAnchors = document.querySelectorAll('.nav-link, .mobile-nav-link, a[href^="#"]');
+  if (!navAnchors.length) return;
+
+  navAnchors.forEach(anchor => {
+    anchor.addEventListener('click', () => {
+      const href = anchor.getAttribute('href');
+      if (!href || href.length < 2 || !href.startsWith('#')) return;
+
+      const targetId = href.substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (!targetSection) return;
+
+      // Update active nav link immediately for crisp feedback
+      const desktopNavLinks = document.querySelectorAll('.nav-link');
+      desktopNavLinks.forEach(link => {
+        if (link.getAttribute('href') === `#${targetId}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      // Re-trigger subtle arrival transition
+      targetSection.classList.remove('section-nav-arrival');
+      void targetSection.offsetWidth;
+      targetSection.classList.add('section-nav-arrival');
+
+      setTimeout(() => {
+        targetSection.classList.remove('section-nav-arrival');
+      }, 380);
+    });
+  });
+}
+
