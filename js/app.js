@@ -298,6 +298,16 @@ const projectDetails = {
   },
 
   // --- Featured Projects & Simulations ---
+  'maarston-craft-compress': {
+    title: 'MaarstOn Craft — Image Compress',
+    category: 'Featured Project',
+    org: 'Personal Project (MaarstOn Craft)',
+    role: 'Creator & Web Developer',
+    tools: 'Image Compression · JavaScript · Web Tool · Browser-Based · Responsive Design',
+    outcome: 'Live Web Application: Privacy-first client-side image compression with real-time results.',
+    image: 'assets/images/work/maarston_craft_image_compress.png',
+    desc: 'A privacy-first browser-based image compression tool with adjustable compression, real-time results, and client-side processing.'
+  },
   'paddycraft-mba': {
     title: 'PaddyCraft: Eco-Furniture Sustainability Initiative',
     category: 'MBA Strategic Project',
@@ -532,6 +542,7 @@ function initModalLightbox() {
 
   triggerElements.forEach(el => {
     el.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
       e.stopPropagation();
       const id = el.getAttribute('data-project-id');
       openModal(id);
@@ -539,6 +550,7 @@ function initModalLightbox() {
 
     // Keyboard accessibility
     el.addEventListener('keydown', (e) => {
+      if (e.target.closest('a')) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         const id = el.getAttribute('data-project-id');
