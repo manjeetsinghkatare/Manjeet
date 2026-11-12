@@ -3,20 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=assets/docs/Manjeet_Singh_Resume.pdf">
-  <title>Manjeet Singh — Resume</title>
-  <script>
-    window.location.replace("assets/docs/Manjeet_Singh_Resume.pdf");
-  </script>
+  <title>Manjeet Singh Katare — Official Resume</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Fallback meta refresh if iframe does not load -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=assets/docs/Manjeet_Singh_Resume.pdf">
+  </noscript>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0b0f19;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #f8fafc;
+    }
+    .top-bar {
+      background: #111827;
+      padding: 0.85rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .brand-title span {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+    .action-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn {
+      text-decoration: none;
+      padding: 0.45rem 0.95rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-back {
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+    .btn-download {
+      background: #4f46e5;
+      color: #ffffff;
+    }
+    .btn-download:hover {
+      background: #4338ca;
+    }
+    .pdf-frame {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #0b0f19;
+    }
+  </style>
 </head>
-<body style="margin:0; padding:0; background-color:#0f172a; font-family:system-ui, -apple-system, sans-serif; height:100vh; display:flex; flex-direction:column;">
-  <div style="background:#1e293b; color:#ffffff; padding:0.75rem 1.5rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #334155;">
-    <div><strong>Manjeet Singh</strong> — Official Resume</div>
-    <div style="display:flex; gap:0.75rem;">
-      <a href="index.html" style="color:#ffffff; text-decoration:none; background:rgba(255,255,255,0.1); padding:0.4rem 0.8rem; border-radius:4px; font-size:0.85rem;">← Back to Portfolio</a>
-      <a href="assets/docs/Manjeet_Singh_Resume.pdf" download="Manjeet_Singh_Resume.pdf" style="color:#0f172a; background:#38bdf8; text-decoration:none; padding:0.4rem 0.8rem; border-radius:4px; font-weight:600; font-size:0.85rem;">Download PDF</a>
+<body>
+  <div class="top-bar">
+    <div class="brand-title">
+      <strong>Manjeet Singh Katare</strong>
+      <span>— Official Resume (Digital Marketing &amp; Creative Strategy)</span>
+    </div>
+    <div class="action-group">
+      <a href="index.html" class="btn btn-back">&larr; Back to Portfolio</a>
+      <a href="assets/docs/Manjeet_Singh_Resume.pdf" download="Manjeet_Singh_Resume.pdf" class="btn btn-download">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF
+      </a>
     </div>
   </div>
-  <iframe src="assets/docs/Manjeet_Singh_Resume.pdf" style="flex:1; width:100%; border:none;" title="Manjeet Singh Official Resume PDF"></iframe>
+  <iframe src="assets/docs/Manjeet_Singh_Resume.pdf" class="pdf-frame" title="Manjeet Singh Katare Resume PDF Viewer"></iframe>
 </body>
 </html>

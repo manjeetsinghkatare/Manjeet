@@ -1,7 +1,7 @@
 ﻿{
-  "name": "Manjeet Singh Katare — Portfolio",
+  "name": "Manjeet Singh Katare — Digital Marketing & Creative Strategy",
   "short_name": "Manjeet",
-  "description": "Official portfolio of Manjeet Singh Katare — MBA Marketing & HR, Digital Marketing Specialist",
+  "description": "Personal professional portfolio of Manjeet Singh Katare — Digital Marketing & Creative Strategy Specialist",
   "icons": [
     {
       "src": "/assets/images/branding/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0b0f19",
-  "background_color": "#0b0f19",
+  "theme_color": "#f8fafc",
+  "background_color": "#f8fafc",
   "display": "standalone",
   "start_url": "/"
 }
