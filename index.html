@@ -922,7 +922,16 @@
               </div>
               <div class="project-footer">
                 <span>JavaScript · Responsive UI · Image Optimization</span>
-                <span class="project-action-link">Case Study &rarr;</span>
+                <div class="project-card-actions">
+                  <a href="https://maarston-craft-image-compress.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-live-btn" aria-label="Visit MaarstOn Craft Image Compress Website" onclick="event.stopPropagation()">
+                    <span>Live Tool</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                  <span class="project-action-link">Case Study &rarr;</span>
+                </div>
               </div>
             </div>
           </article>
@@ -2147,6 +2156,13 @@
             <span class="modal-meta-label">Verified Outcome</span>
             <span id="modalOutcome" class="modal-meta-val" style="color: var(--accent-green);"></span>
           </div>
+        </div>
+
+        <div id="modalLiveWrap" style="margin-top: 1.5rem; display: none;">
+          <a id="modalLiveBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+            <span>Visit Live Website</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
         </div>
       </div>
     </div>

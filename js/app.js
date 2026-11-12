@@ -261,7 +261,8 @@ const projectDetails = {
     tools: 'Image Compression · JavaScript · Web Tool · Browser-Based · Responsive Design',
     outcome: 'Live Web Application: Privacy-first client-side image compression with real-time results.',
     image: 'assets/images/work/maarston_craft_image_compress.png',
-    desc: 'A privacy-first browser-based image compression tool with adjustable compression levels, real-time preview results, and 100% client-side processing without uploading any files to external servers.'
+    desc: 'A privacy-first browser-based image compression tool with adjustable compression levels, real-time preview results, and 100% client-side processing without uploading any files to external servers.',
+    liveUrl: 'https://maarston-craft-image-compress.vercel.app/'
   },
   'paddycraft-mba': {
     title: 'PaddyCraft: Eco-Furniture Sustainability Initiative',
@@ -502,6 +503,17 @@ function initModalLightbox() {
     const imgElem = document.getElementById('modalImg');
     imgElem.src = data.image;
     imgElem.alt = data.title;
+
+    const liveWrap = document.getElementById('modalLiveWrap');
+    const liveBtn = document.getElementById('modalLiveBtn');
+    if (liveWrap && liveBtn) {
+      if (data.liveUrl) {
+        liveBtn.href = data.liveUrl;
+        liveWrap.style.display = 'block';
+      } else {
+        liveWrap.style.display = 'none';
+      }
+    }
 
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
