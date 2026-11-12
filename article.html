@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — Manjeet Singh Katare</title>
+  <meta name="description" content="Strategic insights, tactical breakdowns, and case studies on SEO, performance marketing (Meta & Google Ads), and creative multimedia workflows by Manjeet Singh Katare.">
+  <meta name="author" content="Manjeet Singh Katare">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Manjeet Singh Katare Portfolio">
+  <meta property="og:title" content="Insights & Case Studies — Manjeet Singh Katare">
+  <meta property="og:description" content="Combining creative thinking, digital marketing strategies and analytical execution to build meaningful digital experiences and business growth.">
+  <meta property="og:image" content="https://manjeet-singh-katare.vercel.app/assets/images/branding/portfolio_featured_thumbnail.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Insights & Case Studies — Manjeet Singh Katare">
+  <meta name="twitter:description" content="Combining creative thinking, digital marketing strategies and analytical execution to build meaningful digital experiences and business growth.">
+  <meta name="twitter:image" content="https://manjeet-singh-katare.vercel.app/assets/images/branding/portfolio_featured_thumbnail.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/branding/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/branding/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/branding/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#f8fafc" id="themeMetaColor">
+
+  <!-- Fonts: Plus Jakarta Sans for headlines & Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Inline Script: Prevent Theme Flash -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('manjeet_portfolio_theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Site Header & Navigation
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html#home" class="brand-logo" aria-label="Manjeet Singh Katare Home">
+        <img src="assets/images/branding/m_logo.png" alt="Manjeet Singh Monogram" class="brand-monogram-img">
+        <span class="brand-name">Manjeet Singh Katare</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" role="navigation" aria-label="Primary Navigation">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#experience" class="nav-link">Experience</a>
+        <a href="index.html#work" class="nav-link">Work</a>
+        <a href="index.html#creatives" class="nav-link">Creatives</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#credentials" class="nav-link">Credentials</a>
+        <a href="index.html#blog" class="nav-link active">Blog</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Items: Resume CTA, Theme Toggle, Mobile Menu Trigger -->
+      <div class="nav-actions">
+        <a href="assets/docs/Manjeet_Singh_Resume.pdf" class="btn btn-secondary btn-sm" download="Manjeet_Singh_Resume.pdf" aria-label="Download Official Resume PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Resume</span>
+        </a>
+
+        <!-- Sun/Moon Theme Toggle -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Light / Dark Mode" title="Toggle Light / Dark Mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div id="drawerBackdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer Navigation -->
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-main">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <img src="assets/images/branding/m_logo.png" alt="Manjeet Singh Logo" class="brand-monogram-img">
+          <span class="brand-name">Manjeet Singh Katare</span>
+        </div>
+        <button id="mobileDrawerClose" class="mobile-drawer-close" aria-label="Close Mobile Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html#home" class="mobile-nav-link">Home</a>
+        <a href="index.html#about" class="mobile-nav-link">About</a>
+        <a href="index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="index.html#work" class="mobile-nav-link">Selected Work</a>
+        <a href="index.html#creatives" class="mobile-nav-link">Creatives &amp; YouTube</a>
+        <a href="index.html#skills" class="mobile-nav-link">Skills &amp; Tools</a>
+        <a href="index.html#credentials" class="mobile-nav-link">Credentials</a>
+        <a href="index.html#blog" class="mobile-nav-link">Blog &amp; Insights</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+      </nav>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <a href="assets/docs/Manjeet_Singh_Resume.pdf" class="btn btn-primary" download="Manjeet_Singh_Resume.pdf">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download Resume PDF
+      </a>
+      <a href="https://wa.me/918878014861" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Main Article Container
+       ======================================================================== -->
+  <main class="article-page-main" id="main-content">
+    <div class="container article-container" id="articleContainer">
+      <!-- Loading State Placeholder -->
+      <div class="article-state-box">
+        <div class="article-spinner"></div>
+        <p style="color: var(--text-secondary); font-size: 1.05rem;">Loading article...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo">
+            <img src="assets/images/branding/m_logo.png" alt="Manjeet Singh Monogram" class="brand-monogram-img">
+            <span class="brand-name">Manjeet Singh Katare</span>
+          </div>
+          <div class="footer-headline">Digital Marketing &amp; Creative Strategy</div>
+          <p class="footer-desc">
+            Combining analytical SEO, performance marketing funnels, and high-impact creative multimedia storytelling to build meaningful brand visibility and measurable business growth.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#home" class="footer-nav-link">Home</a></li>
+            <li><a href="index.html#about" class="footer-nav-link">About Me</a></li>
+            <li><a href="index.html#experience" class="footer-nav-link">Experience</a></li>
+            <li><a href="index.html#work" class="footer-nav-link">Selected Case Studies</a></li>
+            <li><a href="index.html#creatives" class="footer-nav-link">Creatives &amp; YouTube</a></li>
+            <li><a href="index.html#skills" class="footer-nav-link">Skills &amp; Ecosystem</a></li>
+            <li><a href="index.html#credentials" class="footer-nav-link">Credentials &amp; Certifications</a></li>
+            <li><a href="index.html#blog" class="footer-nav-link">Insights &amp; Blog</a></li>
+            <li><a href="index.html#contact" class="footer-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Social Profiles</h4>
+          <div class="footer-social-wrap">
+            <a href="https://www.linkedin.com/in/manjeet-singh-katare/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@manjeetsinghkatare" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube" title="YouTube">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/manjeet_.in/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://github.com/manjeetsinghkatare" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://x.com/manjeetkatare" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter)" title="X (Twitter)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://wa.me/918878014861" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp" title="WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+
+          <button id="openSocialsModalBtn" class="btn btn-secondary btn-sm footer-social-more-btn" aria-label="Explore All 11+ Social &amp; Community Profiles">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+            <span>All Social &amp; Community Channels</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 Manjeet Singh Katare. All rights reserved.</div>
+        <a href="index.html#blog" class="back-to-top-btn" aria-label="Return to portfolio">
+          <span>&larr; Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       All Social & Community Networks Modal Dialog
+       ======================================================================== -->
+  <div id="socialsModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="socialsModalTitle">
+    <div class="modal-dialog social-modal-dialog">
+      <button id="socialsModalCloseBtn" class="modal-close-btn" aria-label="Close social channels dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="social-modal-header">
+        <span class="section-kicker">Connect &amp; Follow</span>
+        <h3 id="socialsModalTitle" class="modal-title">All Social &amp; Community Profiles</h3>
+        <p class="modal-desc" style="margin-bottom: 0;">Connect with Manjeet Singh Katare across verified professional networks, content creation channels, development platforms, and communities.</p>
+      </div>
+
+      <div class="social-modal-grid">
+        <!-- 1. LinkedIn -->
+        <a href="https://www.linkedin.com/in/manjeet-singh-katare/" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+          <div class="social-channel-icon" style="color: #0a66c2; background-color: rgba(10, 102, 194, 0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </div>
+          <div class="social-channel-info">
+            <span class="social-channel-name">LinkedIn</span>
+            <span class="social-channel-handle">in/manjeet-singh-katare</span>
+          </div>
+          <span class="social-channel-arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <!-- 2. YouTube -->
+        <a href="https://www.youtube.com/@manjeetsinghkatare/featured" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+          <div class="social-channel-icon" style="color: #ff0000; background-color: rgba(255, 0, 0, 0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="social-channel-info">
+            <span class="social-channel-name">YouTube</span>
+            <span class="social-channel-handle">@manjeetsinghkatare</span>
+          </div>
+          <span class="social-channel-arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <!-- 3. Instagram -->
+        <a href="https://www.instagram.com/manjeet_.in/" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+          <div class="social-channel-icon" style="color: #e1306c; background-color: rgba(225, 48, 108, 0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="social-channel-info">
+            <span class="social-channel-name">Instagram</span>
+            <span class="social-channel-handle">@manjeet_.in</span>
+          </div>
+          <span class="social-channel-arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <!-- 4. WhatsApp -->
+        <a href="https://wa.me/918878014861" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+          <div class="social-channel-icon" style="color: #25d366; background-color: rgba(37, 211, 102, 0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+          </div>
+          <div class="social-channel-info">
+            <span class="social-channel-name">WhatsApp</span>
+            <span class="social-channel-handle">+91 88780 14861</span>
+          </div>
+          <span class="social-channel-arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <!-- 5. GitHub -->
+        <a href="https://github.com/manjeetsinghkatare" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+          <div class="social-channel-icon" style="color: #6e5494; background-color: rgba(110, 84, 148, 0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </div>
+          <div class="social-channel-info">
+            <span class="social-channel-name">GitHub</span>
+            <span class="social-channel-handle">github.com/manjeetsinghkatare</span>
+          </div>
+          <span class="social-channel-arrow" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <!-- 6. X (Twitter) -->
+        <a href="https://x.com/manjeetkatare" target="_blank" rel="noopener noreferrer" class="social-channel-card">
+          <div class="social-channel-icon" style="color: #1da1f2; background-color: rgba(29, 161, 242, 0.1);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </div>
+          <div class="social-channel-info">
+            <span class="social-channel-name">X (Twitter)</span>
+            <span class="social-channel-handle">@manjeetkatare</span>
+          </div>
+          <span class="social-channel-arrow" aria-hidden="true">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

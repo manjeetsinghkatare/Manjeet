@@ -851,13 +851,13 @@ async function initWordPressBlog() {
       const words = contentText.split(/\s+/).filter(Boolean).length;
       const readingMinutes = Math.max(2, Math.ceil(words / 200));
 
-      // 7. Post Link — points to local portfolio article viewer
-      const postUrl = post.id ? `article.html?id=${post.id}` : (post.link || '#');
+      // 7. Post Link — points strictly to article.html?id=${post.id}
+      const postUrl = `article.html?id=${post.id}`;
 
       return `
         <article class="blog-card">
           <div class="blog-media-wrap">
-            <a href="${postUrl}" tabindex="-1" aria-hidden="true" style="display:block; width:100%; height:100%;">
+            <a href="article.html?id=${post.id}" tabindex="-1" aria-hidden="true" style="display:block; width:100%; height:100%;">
               <img src="${featuredImageUrl}" alt="${cleanTitle.replace(/"/g, '&quot;')}" loading="lazy">
             </a>
             <span class="blog-status-badge">Live Article</span>
@@ -869,7 +869,7 @@ async function initWordPressBlog() {
               <span>${formattedDate}</span>
             </div>
             <h3 class="blog-title">
-              <a href="${postUrl}" style="color: inherit; text-decoration: none;">
+              <a href="article.html?id=${post.id}" style="color: inherit; text-decoration: none;">
                 ${cleanTitle}
               </a>
             </h3>
@@ -878,7 +878,7 @@ async function initWordPressBlog() {
             </p>
             <div class="blog-footer">
               <span>Reading Time: ${readingMinutes} min read</span>
-              <a href="${postUrl}" class="blog-read-link" style="color: var(--accent-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+              <a href="article.html?id=${post.id}" class="blog-read-link" style="color: var(--accent-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
                 Read Article &rarr;
               </a>
             </div>
