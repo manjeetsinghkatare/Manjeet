@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initScrollReveal();
   initBackToTop();
+  initWordPressBlog();
+  loadSingleArticle();
 });
 
 /* ==========================================================================
@@ -758,4 +760,288 @@ function initBackToTop() {
       behavior: 'smooth'
     });
   });
+}
+
+/* ==========================================================================
+   12. Dynamic WordPress Headless CMS Blog Feed
+   ========================================================================== */
+const WP_API_URL = 'https://public-api.wordpress.com/wp/v2/sites/manjeetsdigitalmarketingblog.wordpress.com/posts?_embed=1';
+
+function decodeHtmlEntities(str) {
+  if (!str) return '';
+  const txt = document.createElement('textarea');
+  txt.innerHTML = str;
+  return txt.value;
+}
+
+function stripHtmlTags(html) {
+  if (!html) return '';
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return (tmp.textContent || tmp.innerText || '').trim();
+}
+
+async function initWordPressBlog() {
+  const blogGrid = document.getElementById('blog-grid');
+  if (!blogGrid) return;
+
+  try {
+    const response = await fetch(WP_API_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const posts = await response.json();
+
+    if (!Array.isArray(posts) || posts.length === 0) {
+      blogGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: var(--text-secondary);">
+          <p>No published articles found at the moment. New publications coming soon!</p>
+        </div>
+      `;
+      return;
+    }
+
+    const cardsHtml = posts.map(post => {
+      // 1. Title (decoded)
+      const rawTitle = post.title && post.title.rendered ? post.title.rendered : 'Untitled Publication';
+      const cleanTitle = decodeHtmlEntities(rawTitle);
+
+      // 2. Excerpt (cleaned of tags & WordPress trailing read more)
+      let cleanExcerpt = stripHtmlTags(post.excerpt ? post.excerpt.rendered : '');
+      cleanExcerpt = cleanExcerpt.replace(/Continue reading.*$/i, '').trim();
+      if (!cleanExcerpt) {
+        cleanExcerpt = 'Explore the full strategic insights, data architecture, and campaign breakdowns on our blog.';
+      } else if (cleanExcerpt.length > 190) {
+        cleanExcerpt = cleanExcerpt.slice(0, 187) + '...';
+      }
+
+      // 3. Date
+      let formattedDate = 'Recent';
+      if (post.date) {
+        try {
+          const d = new Date(post.date);
+          formattedDate = d.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          });
+        } catch (e) {}
+      }
+
+      // 4. Featured Image from _embedded
+      let featuredImageUrl = 'assets/images/branding/portfolio_featured_thumbnail.png';
+      const mediaItem = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0];
+      if (mediaItem) {
+        featuredImageUrl = (mediaItem.media_details && mediaItem.media_details.sizes && mediaItem.media_details.sizes.large && mediaItem.media_details.sizes.large.source_url) ||
+                           (mediaItem.media_details && mediaItem.media_details.sizes && mediaItem.media_details.sizes.medium_large && mediaItem.media_details.sizes.medium_large.source_url) ||
+                           mediaItem.source_url ||
+                           featuredImageUrl;
+      }
+
+      // 5. Category from _embedded
+      let category = 'Marketing Insights';
+      const termItem = post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0];
+      if (termItem && termItem.name) {
+        category = decodeHtmlEntities(termItem.name);
+      }
+
+      // 6. Reading Time Calculation
+      const contentText = stripHtmlTags((post.content && post.content.rendered) || '');
+      const words = contentText.split(/\s+/).filter(Boolean).length;
+      const readingMinutes = Math.max(2, Math.ceil(words / 200));
+
+      // 7. Post Link — points to local portfolio article viewer
+      const postUrl = post.id ? `article.html?id=${post.id}` : (post.link || '#');
+
+      return `
+        <article class="blog-card">
+          <div class="blog-media-wrap">
+            <a href="${postUrl}" tabindex="-1" aria-hidden="true" style="display:block; width:100%; height:100%;">
+              <img src="${featuredImageUrl}" alt="${cleanTitle.replace(/"/g, '&quot;')}" loading="lazy">
+            </a>
+            <span class="blog-status-badge">Live Article</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-cat-date">
+              <span class="blog-cat">${category}</span>
+              <span>•</span>
+              <span>${formattedDate}</span>
+            </div>
+            <h3 class="blog-title">
+              <a href="${postUrl}" style="color: inherit; text-decoration: none;">
+                ${cleanTitle}
+              </a>
+            </h3>
+            <p class="blog-excerpt">
+              ${cleanExcerpt}
+            </p>
+            <div class="blog-footer">
+              <span>Reading Time: ${readingMinutes} min read</span>
+              <a href="${postUrl}" class="blog-read-link" style="color: var(--accent-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+                Read Article &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    blogGrid.innerHTML = cardsHtml;
+  } catch (error) {
+    console.error('Error fetching WordPress blog posts:', error);
+    blogGrid.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: var(--text-secondary);">
+        <p style="margin-bottom: 0.75rem;">Unable to load live articles right now.</p>
+        <a href="blog.html" class="btn btn-secondary btn-sm" style="display: inline-flex; margin-top: 0.5rem;">
+          <span>Explore Blog Archive</span>
+        </a>
+      </div>
+    `;
+  }
+}
+
+/* ==========================================================================
+   13. Single Article Dynamic Viewer (article.html)
+   ========================================================================== */
+async function loadSingleArticle() {
+  const container = document.getElementById('articleContainer');
+  if (!container) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get('id');
+
+  // Handle missing ID parameter
+  if (!postId) {
+    container.innerHTML = `
+      <div class="article-state-box">
+        <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary);">No Article Specified</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Please select an article from the blog section or return to the portfolio.</p>
+        <a href="index.html#blog" class="btn btn-primary">
+          &larr; Back to Portfolio
+        </a>
+      </div>
+    `;
+    return;
+  }
+
+  try {
+    const response = await fetch(`https://public-api.wordpress.com/wp/v2/sites/manjeetsdigitalmarketingblog.wordpress.com/posts/${postId}?_embed=1`);
+    if (!response.ok) {
+      throw new Error(`Article not found (status ${response.status})`);
+    }
+
+    const post = await response.json();
+
+    // 1. Title (decoded)
+    const rawTitle = post.title && post.title.rendered ? post.title.rendered : 'Untitled Article';
+    const cleanTitle = decodeHtmlEntities(rawTitle);
+    document.title = `${cleanTitle} — Manjeet Singh Katare`;
+
+    // 2. Date
+    let formattedDate = 'Recently Published';
+    if (post.date) {
+      try {
+        const d = new Date(post.date);
+        formattedDate = d.toLocaleDateString('en-US', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric'
+        });
+      } catch (e) {}
+    }
+
+    // 3. Category from embedded taxonomy
+    let category = 'Marketing Strategy & Growth';
+    const termItem = post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0];
+    if (termItem && termItem.name) {
+      category = decodeHtmlEntities(termItem.name);
+    }
+
+    // 4. Reading Time calculation
+    const contentText = stripHtmlTags((post.content && post.content.rendered) || '');
+    const words = contentText.split(/\s+/).filter(Boolean).length;
+    const readingMinutes = Math.max(2, Math.ceil(words / 200));
+
+    // 5. Featured Image
+    let featuredImageUrl = '';
+    const mediaItem = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0];
+    if (mediaItem) {
+      featuredImageUrl = (mediaItem.media_details && mediaItem.media_details.sizes && mediaItem.media_details.sizes.large && mediaItem.media_details.sizes.large.source_url) ||
+                         (mediaItem.media_details && mediaItem.media_details.sizes && mediaItem.media_details.sizes.medium_large && mediaItem.media_details.sizes.medium_large.source_url) ||
+                         mediaItem.source_url ||
+                         '';
+    }
+
+    // 6. Full Article HTML Content
+    const contentHtml = (post.content && post.content.rendered) || '<p>No content available for this publication.</p>';
+
+    // Render complete responsive article container
+    container.innerHTML = `
+      <div class="article-back-nav">
+        <a href="index.html#blog" class="article-back-btn">
+          &larr; Back to Portfolio Articles
+        </a>
+      </div>
+
+      <header class="article-header">
+        <div class="article-meta-row">
+          <span class="article-category-badge">${category}</span>
+          <span>•</span>
+          <span>${formattedDate}</span>
+          <span>•</span>
+          <span>${readingMinutes} min read</span>
+        </div>
+
+        <h1 class="article-main-title">${cleanTitle}</h1>
+
+        <div class="article-author-card">
+          <img src="assets/images/profile/manjeet_profile.png" alt="Manjeet Singh Katare" class="article-author-avatar" onerror="this.src='assets/images/branding/m_logo.png'">
+          <div>
+            <div class="article-author-name">Manjeet Singh Katare</div>
+            <div class="article-author-role">Digital Marketing & Creative Strategy Specialist</div>
+          </div>
+        </div>
+      </header>
+
+      ${featuredImageUrl ? `
+        <div class="article-featured-media">
+          <img src="${featuredImageUrl}" alt="${cleanTitle.replace(/"/g, '&quot;')}">
+        </div>
+      ` : ''}
+
+      <div class="article-content">
+        ${contentHtml}
+      </div>
+
+      <div class="article-bottom-actions">
+        <a href="index.html#blog" class="btn btn-secondary">
+          &larr; Back to All Articles
+        </a>
+        <a href="index.html#contact" class="btn btn-primary">
+          Discuss This Strategy &rarr;
+        </a>
+      </div>
+    `;
+
+    // Smooth scroll to top of reading area
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  } catch (error) {
+    console.error('Error loading article:', error);
+    container.innerHTML = `
+      <div class="article-state-box">
+        <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary);">Unable to Load Article</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">We could not fetch this publication from the WordPress headless backend. It might be unpublished or the ID is invalid.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html#blog" class="btn btn-primary">
+            &larr; Back to Portfolio
+          </a>
+          <button onclick="window.location.reload()" class="btn btn-secondary">
+            Retry
+          </button>
+        </div>
+      </div>
+    `;
+  }
 }

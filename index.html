@@ -1882,76 +1882,11 @@
           </a>
         </div>
 
-        <!-- Blog Cards Grid (Upcoming Deep Dives & Publishing System) -->
-        <div class="blog-grid">
-          <!-- Article 1: SEO Keyword Architecture -->
-          <article class="blog-card">
-            <div class="blog-media-wrap">
-              <img src="assets/images/work/seo_multi_business_analytics.jpg" alt="SEO Keyword Strategy" loading="lazy">
-              <span class="blog-status-badge">Upcoming Publication</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-cat-date">
-                <span class="blog-cat">Organic Search Strategy</span>
-                <span>•</span>
-                <span>In Editorial Review</span>
-              </div>
-              <h3 class="blog-title">Deconstructing Search Intent: How We Ranked 5+ Commercial Websites on Google's First Page</h3>
-              <p class="blog-excerpt">
-                A technical breakdown of informational vs. transactional search intent clustering, on-page topic authority, and backlink outreach strategies that drove steady keyword growth for healthcare and B2B clients.
-              </p>
-              <div class="blog-footer">
-                <span>Reading Time: 6 min read</span>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Coming Soon</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 2: Performance Paid Media & ROAS -->
-          <article class="blog-card">
-            <div class="blog-media-wrap">
-              <img src="assets/images/work/mumbai_coworking_seo.png" alt="Meta Ads ROAS Strategy" loading="lazy">
-              <span class="blog-status-badge">Upcoming Publication</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-cat-date">
-                <span class="blog-cat">Paid Advertising &amp; ROAS</span>
-                <span>•</span>
-                <span>In Editorial Review</span>
-              </div>
-              <h3 class="blog-title">The Performance ROAS Blueprint: Aligning Meta Ads with Conversion Tracking</h3>
-              <p class="blog-excerpt">
-                Why campaign budget optimization (CBO) and lookalike audience segmentation fail without robust pixel attribution and conversion tracking — and how to structure ad sets for measurable return.
-              </p>
-              <div class="blog-footer">
-                <span>Reading Time: 8 min read</span>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Coming Soon</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 3: High-CTR Creative Hooks -->
-          <article class="blog-card">
-            <div class="blog-media-wrap">
-              <img src="assets/images/work/youtube_channel_art.png" alt="Creative Strategy & CTR Hooks" loading="lazy">
-              <span class="blog-status-badge">Upcoming Publication</span>
-            </div>
-            <div class="blog-body">
-              <div class="blog-cat-date">
-                <span class="blog-cat">Creative Strategy</span>
-                <span>•</span>
-                <span>In Editorial Review</span>
-              </div>
-              <h3 class="blog-title">Data-Driven Creatives: Why Visual Hierarchy and Thumb-Stopping Hooks Drive Ad Success</h3>
-              <p class="blog-excerpt">
-                Analyzing the correlation between Adobe Creative Suite video pacing, 3-second hook retention, and lower customer acquisition costs (CAC) across competitive consumer verticals.
-              </p>
-              <div class="blog-footer">
-                <span>Reading Time: 5 min read</span>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Coming Soon</span>
-              </div>
-            </div>
-          </article>
+        <!-- Blog Cards Grid (Dynamically Populated from WordPress REST API) -->
+        <div class="blog-grid" id="blog-grid">
+          <div class="blog-loading-state" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 1rem;">
+            <p>Loading articles...</p>
+          </div>
         </div>
 
         <!-- REUSABLE BLOG ARTICLE TEMPLATE (Unpublished by default)
