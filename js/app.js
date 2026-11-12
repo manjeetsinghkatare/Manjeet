@@ -965,7 +965,7 @@ const localArticles = {
     category: "Performance Marketing",
     date: "September 2026",
     readingMinutes: 9,
-    image: "assets/images/work/mumbai_coworking_seo.png",
+    image: "assets/images/work/mumbai_coworking_seo.jpg",
     excerpt: "Why campaign budget optimization (CBO) and lookalike audiences require airtight server-side Conversions API (CAPI) to protect ad spend efficiency.",
     contentHtml: `
       <p class="article-lead">
@@ -1108,7 +1108,7 @@ async function initWordPressBlog() {
       title: "The ROAS Blueprint: Synchronizing Meta Ads with Conversion Tracking",
       cat: "Performance Ads",
       date: "September 2026",
-      img: "assets/images/work/mumbai_coworking_seo.png",
+      img: "assets/images/work/mumbai_coworking_seo.jpg",
       excerpt: "Why campaign budget optimization (CBO) and lookalike audiences require airtight server-side Conversions API (CAPI) to protect ad spend efficiency.",
       read: "9 min read"
     }
@@ -1285,7 +1285,7 @@ async function loadSingleArticle() {
         <h1 class="article-main-title">${article.title}</h1>
 
         <div class="article-author-card">
-          <img src="assets/images/profile/manjeet_profile.png" alt="Manjeet Singh Katare" class="article-author-avatar" onerror="this.src='assets/images/branding/m_logo.png'">
+          <img src="assets/images/profile/manjeet_profile.jpg" alt="Manjeet Singh Katare" class="article-author-avatar" onerror="this.src='assets/images/branding/m_logo.png'">
           <div>
             <div class="article-author-name">Manjeet Singh Katare</div>
             <div class="article-author-role">Digital Marketing & Creative Strategy Specialist</div>
@@ -1381,7 +1381,7 @@ async function loadSingleArticle() {
         <h1 class="article-main-title">${cleanTitle}</h1>
 
         <div class="article-author-card">
-          <img src="assets/images/profile/manjeet_profile.png" alt="Manjeet Singh Katare" class="article-author-avatar" onerror="this.src='assets/images/branding/m_logo.png'">
+          <img src="assets/images/profile/manjeet_profile.jpg" alt="Manjeet Singh Katare" class="article-author-avatar" onerror="this.src='assets/images/branding/m_logo.png'">
           <div>
             <div class="article-author-name">Manjeet Singh Katare</div>
             <div class="article-author-role">Digital Marketing & Creative Strategy Specialist</div>
