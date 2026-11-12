@@ -1,0 +1,171 @@
+{
+  "personal": {
+    "name": "Manjeet Singh",
+    "email": "manjeetsinghkatare@gmail.com",
+    "phone": "+91 8878014861",
+    "location": "Gwalior, India 474006",
+    "linkedin": "https://www.linkedin.com/in/manjeet-singh-katare/",
+    "linkedinLabel": "Manjeet Singh Katare",
+    "portfolio": "https://manjeet-singh-katare.vercel.app/"
+  },
+  "careerObjective": "MBA (Marketing & HR) candidate with hands-on experience in SEO, content marketing, social media, and paid advertising, backed by Google Ads, Meta Blueprint, and HubSpot certifications. Seeking an opportunity in digital marketing role to apply analytical and creative skills to brand visibility, engagement, and lead generation.",
+  "highlights": "2+ Years Experience | 5+ Businesses | 30+ Creatives | 6 Certifications",
+  "education": [
+    {
+      "degree": "Master of Business Administration (MBA)",
+      "institution": "Prestige Institute of Management (Gwalior, MP)",
+      "specialization": "Specialization - Marketing & HR",
+      "period": "August 2025 – Present"
+    },
+    {
+      "degree": "Bachelor of Business Administration (BBA)",
+      "institution": "Vikrant University (Gwalior, MP)",
+      "specialization": "Specialization - Marketing",
+      "period": "August 2022 – July 2025"
+    },
+    {
+      "degree": "Diploma in Computer Application (DCA)",
+      "institution": "Makhanlal Chaturvedi National University (Bhopal, MP)",
+      "period": "May 2023 – December 2024"
+    },
+    {
+      "degree": "Senior Secondary Certificate (12th – PCB Stream)",
+      "institution": "St. Paul Convent School (MP Board)",
+      "period": "June 2021 – March 2022"
+    }
+  ],
+  "professionalExperience": [
+    {
+      "role": "Content Writing & Digital Marketing Intern",
+      "company": "Youthmonk",
+      "location": "Rajkot, Gujarat | Remote",
+      "period": "June 2026 – September 2026",
+      "bullets": [
+        "Conducted keyword research and supported on-page and off-page SEO activities for 5+ businesses, including healthcare and B2B clients.",
+        "Created SEO-friendly blogs, articles, and social media content.",
+        "Supported backlink profiling and competitor analysis to improve organic search visibility."
+      ]
+    },
+    {
+      "role": "Digital Marketing & Lead Generation Intern",
+      "company": "VedAlex",
+      "location": "Jaipur, Rajasthan | Remote",
+      "period": "December 2025 – June 2026",
+      "bullets": [
+        "Assisted with digital marketing campaigns, lead generation strategies, market research, data analysis, and day-to-day marketing operations."
+      ]
+    },
+    {
+      "role": "Marketing Associate",
+      "company": "VedAlex",
+      "location": "Jaipur, Rajasthan | Remote",
+      "period": "05 September 2023 – 11 September 2025",
+      "meta": "Full-time (2 Years)",
+      "bullets": [
+        "Managed Meta Ads, Google Ads and SEO activities, including keyword research and website optimization.",
+        "Managed social media marketing across Facebook, Instagram and WhatsApp, creating and publishing promotional content for pages with 10,000+ followers.",
+        "Designed 30+ promotional and marketing creatives using Canva and Photoshop; coordinated sales meetings, supported product communication, and occasionally assisted with lead generation."
+      ]
+    }
+  ],
+  "keySkills": {
+    "tools": [
+      "Canva",
+      "Adobe Photoshop",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Adobe Lightroom",
+      "MS Excel",
+      "Meta Ads Manager",
+      "Google Analytics 4 (GA4)",
+      "Google Search Console",
+      "Power BI",
+      "WordPress"
+    ],
+    "digitalMarketing": [
+      "Social Media Marketing",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Keyword Research",
+      "Backlink Building",
+      "Content Writing",
+      "Copywriting",
+      "Content Marketing",
+      "Meta Ads",
+      "Google Ads",
+      "Lead Generation",
+      "Audience Retargeting"
+    ],
+    "professionalSkills": [
+      "Communication",
+      "Creativity",
+      "Teamwork",
+      "Problem-Solving",
+      "Adaptability",
+      "Time Management"
+    ]
+  },
+  "certifications": [
+    {
+      "title": "Google Ads Search Certification",
+      "issuer": "Google",
+      "details": "Optimizing search campaigns for targeted traffic (valid through September 2027)."
+    },
+    {
+      "title": "Google Ads Measurement Certification",
+      "issuer": "Google",
+      "details": "Measuring conversions and campaign performance (valid through October 2027)."
+    },
+    {
+      "title": "Digital Marketing Certification",
+      "issuer": "HubSpot",
+      "details": "SEO, social strategy, and analytics."
+    },
+    {
+      "title": "Email Marketing Certification",
+      "issuer": "HubSpot",
+      "details": "Email strategy, segmentation, and deliverability (valid through November 2028)."
+    },
+    {
+      "title": "Meta Blueprint: Digital Marketing Associate",
+      "issuer": "Meta",
+      "details": "Executing and analyzing ad campaigns."
+    },
+    {
+      "title": "Advertising & Promotions Management (Elite, 64%)",
+      "issuer": "NPTEL, IIT Dhanbad",
+      "details": "Advertising strategy and promotions."
+    }
+  ],
+  "creativeProjects": [
+    {
+      "title": "YouTube Channel (@manjeetsinghkatare)",
+      "desc": "Created and managed a channel featuring music remixes, EDM tracks, montages, and After Effects tutorials."
+    },
+    {
+      "title": "MaarstOn Craft",
+      "desc": "Built a browser-based image compression tool."
+    },
+    {
+      "title": "PaddyCraft",
+      "desc": "Researched an eco-furniture project at PIMR."
+    },
+    {
+      "title": "Freelance Graphic Design",
+      "desc": "Completed client projects using Photoshop, Lightroom, Premiere Pro, and After Effects."
+    }
+  ],
+  "extracurricular": [
+    "Represented Vikrant University in inter-university events and anchoring; participated in inter-university art competitions at Amity, Jiwaji, and ITM University."
+  ],
+  "interests": [
+    "Graphic Design",
+    "Gaming",
+    "Working Out",
+    "Automotive Mechanics & Driving"
+  ],
+  "languages": [
+    "English (Professional)",
+    "Hindi (Native)"
+  ]
+}

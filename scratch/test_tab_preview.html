@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Tab Favicon Simulation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      width: 1000px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    p.subtitle {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .section-box {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-title {
+      padding: 10px 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* LIGHT THEME TAB BAR */
+    .light-bar {
+      background: #dee1e6;
+      padding: 10px 16px 0 16px;
+    }
+    .light-bar .section-title {
+      color: #475569;
+      background: #cbd5e1;
+    }
+    .light-tab-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .light-tab {
+      background: #ffffff;
+      color: #1e293b;
+      height: 38px;
+      border-radius: 8px 8px 0 0;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.06);
+      width: 250px;
+    }
+    .light-tab .close-btn {
+      margin-left: auto;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* DARK THEME TAB BAR */
+    .dark-bar {
+      background: #1e1f22;
+      padding: 10px 16px 0 16px;
+    }
+    .dark-bar .section-title {
+      color: #94a3b8;
+      background: #111827;
+    }
+    .dark-tab-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .dark-tab {
+      background: #2b2d30;
+      color: #f1f5f9;
+      height: 38px;
+      border-radius: 8px 8px 0 0;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.4);
+      width: 250px;
+    }
+    .dark-tab .close-btn {
+      margin-left: auto;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* Bookmark bar simulation */
+    .bm-row {
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .light-bm { background: #f1f3f4; color: #3c4043; }
+    .dark-bm { background: #2b2d30; color: #e8eaed; }
+    .bm-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .fav-img {
+      width: 16px;
+      height: 16px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .fav-img-32 {
+      width: 24px;
+      height: 24px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* Showcase grid */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      background: #111827;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #1e293b;
+    }
+    .showcase-card {
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .showcase-card h3 {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .showcase-card img {
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>Favicon Multi-Browser Simulation</h1>
+    <p class="subtitle">Verifying visual contrast, sharpness, and readability across Light Theme and Dark Theme browser tabs, bookmarks, and mobile icons.</p>
+  </div>
+
+  <!-- LIGHT THEME PREVIEW -->
+  <div class="section-box">
+    <div class="section-title" style="background:#cbd5e1; color:#334155;">
+      <span>☀️ Chrome / Safari / Edge — Light Mode Tab & Bookmarks</span>
+    </div>
+    <div class="light-bar">
+      <div class="light-tab-row">
+        <div class="light-tab">
+          <img src="../assets/images/branding/favicon-16x16.png" class="fav-img" alt="favicon">
+          <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Manjeet Singh Katare — Portfolio</span>
+          <span class="close-btn">×</span>
+        </div>
+        <div class="light-tab" style="background: #e2e8f0; opacity: 0.75;">
+          <img src="../assets/images/branding/favicon-32x32.png" class="fav-img" alt="favicon">
+          <span>Inactive Tab</span>
+          <span class="close-btn">×</span>
+        </div>
+      </div>
+    </div>
+    <div class="bm-row light-bm">
+      <div class="bm-item">
+        <img src="../assets/images/branding/favicon-16x16.png" class="fav-img" alt="favicon">
+        <span>Manjeet Portfolio</span>
+      </div>
+      <div class="bm-item">
+        <span style="color:#64748b;">★ Bookmarks Bar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DARK THEME PREVIEW -->
+  <div class="section-box">
+    <div class="section-title" style="background:#111827; color:#93c5fd;">
+      <span>🌙 Chrome / Safari / Edge — Dark Mode Tab & Bookmarks</span>
+    </div>
+    <div class="dark-bar">
+      <div class="dark-tab-row">
+        <div class="dark-tab">
+          <img src="../assets/images/branding/favicon-16x16.png" class="fav-img" alt="favicon">
+          <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Manjeet Singh Katare — Portfolio</span>
+          <span class="close-btn">×</span>
+        </div>
+        <div class="dark-tab" style="background: #1f2124; opacity: 0.7;">
+          <img src="../assets/images/branding/favicon-32x32.png" class="fav-img" alt="favicon">
+          <span>Inactive Tab</span>
+          <span class="close-btn">×</span>
+        </div>
+      </div>
+    </div>
+    <div class="bm-row dark-bm">
+      <div class="bm-item">
+        <img src="../assets/images/branding/favicon-16x16.png" class="fav-img" alt="favicon">
+        <span>Manjeet Portfolio</span>
+      </div>
+      <div class="bm-item">
+        <span style="color:#94a3b8;">★ Bookmarks Bar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALL SIZES SHOWCASE -->
+  <div class="showcase-grid">
+    <div class="showcase-card">
+      <h3>16×16 Tab Icon</h3>
+      <div style="background:#dee1e6; padding:12px; border-radius:6px; display:inline-block;">
+        <img src="../assets/images/branding/favicon-16x16.png" width="16" height="16" style="image-rendering:pixelated;">
+      </div>
+      <div style="background:#1e1f22; padding:12px; border-radius:6px; display:inline-block;">
+        <img src="../assets/images/branding/favicon-16x16.png" width="16" height="16" style="image-rendering:pixelated;">
+      </div>
+      <span style="font-size:0.75rem; color:#64748b;">Native 16px</span>
+    </div>
+
+    <div class="showcase-card">
+      <h3>32×32 Retina Tab</h3>
+      <div style="background:#dee1e6; padding:12px; border-radius:6px; display:inline-block;">
+        <img src="../assets/images/branding/favicon-32x32.png" width="32" height="32">
+      </div>
+      <div style="background:#1e1f22; padding:12px; border-radius:6px; display:inline-block;">
+        <img src="../assets/images/branding/favicon-32x32.png" width="32" height="32">
+      </div>
+      <span style="font-size:0.75rem; color:#64748b;">Retina 32px</span>
+    </div>
+
+    <div class="showcase-card">
+      <h3>180×180 Apple Touch</h3>
+      <img src="../assets/images/branding/apple-touch-icon.png" width="72" height="72" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.5);">
+      <span style="font-size:0.75rem; color:#64748b;">iOS Bookmark / Home</span>
+    </div>
+
+    <div class="showcase-card">
+      <h3>192×192 Android PWA</h3>
+      <img src="../assets/images/branding/android-chrome-192x192.png" width="72" height="72" style="border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.5);">
+      <span style="font-size:0.75rem; color:#64748b;">Android / Chrome App</span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html { margin:0; padding:0; height:100%; overflow:hidden; }
+    iframe { width:100%; height:100%; border:none; }
+  </style>
+</head>
+<body>
+  <iframe id="app" src="../index.html"></iframe>
+  <script>
+    const iframe = document.getElementById('app');
+    iframe.onload = () => {
+      setTimeout(() => {
+        const work = iframe.contentDocument.getElementById('work');
+        // Scroll the iframe content window so #work header & filter buttons & first cards are visible
+        iframe.contentWindow.scrollTo(0, work.offsetTop);
+      }, 400);
+    };
+  </script>
+</body>
+</html>
