@@ -42,7 +42,7 @@
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container nav-container">
-      <a href="index.html" class="brand-logo" aria-label="Back to Portfolio">
+      <a href="index.html#home" class="brand-logo" aria-label="Back to Portfolio">
         <img src="assets/images/branding/m_logo.png" alt="Manjeet Singh Monogram" class="brand-monogram-img">
         <span class="brand-name">Manjeet Singh Katare</span>
       </a>
@@ -81,7 +81,7 @@
 
   <main style="padding: 5rem 0 6rem;">
     <div class="container">
-      <div class="section-header" style="max-width: 800px; margin-bottom: 3.5rem;">
+      <div class="section-header" style="max-width: 840px; margin-bottom: 3.5rem;">
         <span class="section-kicker">Knowledge Base &amp; Strategy</span>
         <h1 class="section-title">Marketing Insights &amp; Strategic Perspectives</h1>
         <p class="section-subtitle">
@@ -89,99 +89,165 @@
         </p>
       </div>
 
-      <!-- Featured Upcoming Deep Dive Card -->
-      <div class="blog-intro-card" style="margin-bottom: 4rem;">
-        <div class="blog-intro-text">
-          <span class="blog-cat" style="font-size: 0.8125rem;">Upcoming Lead Article</span>
-          <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; margin: 0.5rem 0 1rem; color: var(--text-primary);">
-            Deconstructing Search Intent: How We Ranked 5+ Commercial Websites on Google's First Page
-          </h2>
-          <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.65;">
-            An exhaustive analysis of multi-client organic SEO campaigns executed across clinical healthcare and commercial B2B sectors. Covers keyword intent clustering, on-page topical authority mapping, and high-DA backlink acquisition.
-          </p>
-          <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; color: var(--text-muted);">
-            <span>By Manjeet Singh Katare</span>
-            <span>•</span>
-            <span>Estimated Reading Time: 6 mins</span>
-            <span>•</span>
-            <span style="color: var(--accent-primary); font-weight: 600;">Status: Editorial Stage</span>
+      <!-- Featured Published Lead Case Study Hero Card -->
+      <article class="featured-case-study-card" onclick="window.location.href='article.html?id=seo-search-intent'" style="cursor: pointer;">
+        <div class="featured-case-study-grid">
+          <div class="featured-case-study-content">
+            <div class="featured-badge-row">
+              <span class="blog-cat" style="font-size: 0.8125rem;">Featured Case Study</span>
+              <span class="featured-status-pill">✓ Published</span>
+            </div>
+
+            <h2 class="featured-case-study-title">
+              <a href="article.html?id=seo-search-intent">
+                Deconstructing Search Intent: How We Ranked 5+ Commercial Websites on Google's First Page
+              </a>
+            </h2>
+
+            <p class="featured-case-study-desc">
+              An exhaustive technical analysis of multi-client organic SEO campaigns executed across clinical healthcare, coworking, and commercial B2B sectors. Covers keyword intent clustering, on-page topical authority mapping, and high-DA backlink acquisition.
+            </p>
+
+            <div class="featured-case-study-footer">
+              <div class="featured-meta-info">
+                <span>By Manjeet Singh Katare</span>
+                <span>•</span>
+                <span>November 2026</span>
+                <span>•</span>
+                <span>10 min read</span>
+              </div>
+
+              <a href="article.html?id=seo-search-intent" class="btn btn-primary featured-cta-btn" onclick="event.stopPropagation()">
+                <span>Read Full Case Study</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="featured-case-study-media">
+            <img src="assets/images/blog/seo_search_intent_featured.jpg" alt="Google Search Console Analytics and Organic Search Case Study by Manjeet Singh Katare" loading="lazy">
+            <div class="featured-media-overlay" aria-hidden="true">
+              <span class="featured-media-pill">SEO Deep Dive</span>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Articles Grid -->
+      <!-- Articles Grid (All Published with Real Case Study Links) -->
       <div class="blog-grid">
-        <!-- Card 1 -->
-        <article class="blog-card">
+        <!-- Article 1: Clinical SEO -->
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=medical-clinical-seo'">
           <div class="blog-media-wrap">
-            <img src="assets/images/work/seo_multi_business_analytics.jpg" alt="SEO Keyword Strategy" loading="lazy">
-            <span class="blog-status-badge">In Progress</span>
+            <img src="assets/images/work/dermatology_skincare_clinic.jpg" alt="Clinical SEO Architecture" loading="lazy">
+            <span class="blog-status-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">Published</span>
           </div>
           <div class="blog-body">
             <div class="blog-cat-date">
-              <span class="blog-cat">Organic SEO</span>
+              <span class="blog-cat">Healthcare SEO</span>
               <span>•</span>
-              <span>Upcoming</span>
+              <span>October 2026</span>
             </div>
-            <h3 class="blog-title">The On-Page Optimization Architecture for Medical &amp; Clinical Practices</h3>
+            <h3 class="blog-title">
+              <a href="article.html?id=medical-clinical-seo" style="color: inherit; text-decoration: none;">
+                The On-Page Optimization Architecture for Medical &amp; Clinical Practices
+              </a>
+            </h3>
             <p class="blog-excerpt">
-              How structuring localized service pages and clinical condition queries generated continuous qualified appointment inquiries.
+              How structuring localized service pages, clinical condition queries, and medical schema generated continuous qualified appointment inquiries.
             </p>
             <div class="blog-footer">
-              <span>SEO Framework</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Soon</span>
+              <span>6 min read</span>
+              <a href="article.html?id=medical-clinical-seo" class="blog-read-link" onclick="event.stopPropagation()">Read Article &rarr;</a>
             </div>
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="blog-card">
+        <!-- Article 2: Meta Ads ROAS -->
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=meta-ads-roas'">
           <div class="blog-media-wrap">
             <img src="assets/images/work/mumbai_coworking_seo.png" alt="Meta Ads ROAS" loading="lazy">
-            <span class="blog-status-badge">In Progress</span>
+            <span class="blog-status-badge" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">Published</span>
           </div>
           <div class="blog-body">
             <div class="blog-cat-date">
               <span class="blog-cat">Performance Ads</span>
               <span>•</span>
-              <span>Upcoming</span>
+              <span>September 2026</span>
             </div>
-            <h3 class="blog-title">The ROAS Blueprint: Synchronizing Meta Ads with Conversion Tracking</h3>
+            <h3 class="blog-title">
+              <a href="article.html?id=meta-ads-roas" style="color: inherit; text-decoration: none;">
+                The ROAS Blueprint: Synchronizing Meta Ads with Conversion Tracking
+              </a>
+            </h3>
             <p class="blog-excerpt">
-              Why campaign budget optimization (CBO) and lookalike audiences require airtight conversion tracking to protect ad spend efficiency.
+              Why campaign budget optimization (CBO) and lookalike audiences require airtight server-side Conversions API (CAPI) to protect ad spend efficiency.
             </p>
             <div class="blog-footer">
-              <span>Paid Acquisition</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Soon</span>
+              <span>7 min read</span>
+              <a href="article.html?id=meta-ads-roas" class="blog-read-link" onclick="event.stopPropagation()">Read Article &rarr;</a>
             </div>
           </div>
         </article>
 
-        <!-- Card 3 -->
-        <article class="blog-card">
+        <!-- Article 3: Creative Video Strategy -->
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=video-hooks-creative'">
           <div class="blog-media-wrap">
-            <img src="assets/images/work/youtube_channel_art.png" alt="Creative CTR Strategy" loading="lazy">
-            <span class="blog-status-badge">In Progress</span>
+            <img src="assets/images/work/youtube_channel_art.png" alt="Creative Video Hooks" loading="lazy">
+            <span class="blog-status-badge" style="background: rgba(147, 51, 234, 0.15); color: #a855f7;">Published</span>
           </div>
           <div class="blog-body">
             <div class="blog-cat-date">
               <span class="blog-cat">Creative Strategy</span>
               <span>•</span>
-              <span>Upcoming</span>
+              <span>August 2026</span>
             </div>
-            <h3 class="blog-title">Data-Driven Creatives: Why Visual Pacing and Thumb-Stopping Hooks Drive Conversions</h3>
+            <h3 class="blog-title">
+              <a href="article.html?id=video-hooks-creative" style="color: inherit; text-decoration: none;">
+                Data-Driven Creatives: Why Visual Pacing and Thumb-Stopping Hooks Drive Conversions
+              </a>
+            </h3>
             <p class="blog-excerpt">
-              Bridging Premiere Pro and After Effects video workflows with paid ad metrics to maximize 3-second hook rate and lower CAC.
+              Bridging Premiere Pro and After Effects video workflows with paid ad metrics to maximize 3-second hook rate and lower customer acquisition costs.
             </p>
             <div class="blog-footer">
-              <span>Creative Media</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Soon</span>
+              <span>5 min read</span>
+              <a href="article.html?id=video-hooks-creative" class="blog-read-link" onclick="event.stopPropagation()">Read Article &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4: WordPress Live Blog Post -->
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=6'">
+          <div class="blog-media-wrap">
+            <img src="assets/images/blog/youre_welcome_featured.png" alt="Welcome to My Digital Marketing Journey" loading="lazy">
+            <span class="blog-status-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">Live Article</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-cat-date">
+              <span class="blog-cat">Digital Marketing</span>
+              <span>•</span>
+              <span>Nov 12, 2026</span>
+            </div>
+            <h3 class="blog-title">
+              <a href="article.html?id=6" style="color: inherit; text-decoration: none;">
+                Welcome to My Digital Marketing Journey: Mastering the Online World
+              </a>
+            </h3>
+            <p class="blog-excerpt">
+              Welcome to my very first digital marketing blog post! Whether you are a small business owner trying to figure out how to get more eyes on your product, a student exploring a new career path, or simply curious about online growth...
+            </p>
+            <div class="blog-footer">
+              <span>3 min read</span>
+              <a href="article.html?id=6" class="blog-read-link" onclick="event.stopPropagation()">Read Article &rarr;</a>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Turnkey Newsletter / Notification Box -->
+      <!-- Newsletter / Notification Box -->
       <div style="margin-top: 5rem; padding: 3rem; border-radius: var(--radius-xl); background-color: var(--bg-surface); border: 1px solid var(--border-subtle); text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
         <span class="section-kicker">Stay Informed</span>
         <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin: 0.5rem 0 0.75rem;">Get Notified When New Case Studies Are Published</h3>
@@ -192,39 +258,6 @@
           <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Subscribe</button>
         </form>
       </div>
-
-      <!-- REUSABLE ARTICLE TEMPLATE FOR FUTURE FULL-LENGTH ARTICLES:
-      /*
-      <article class="single-article-container" style="display:none; max-width: 780px; margin: 0 auto;">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">[Category]</span>
-            <span class="article-date">[Publish Date]</span>
-            <span class="article-read-time">[X min read]</span>
-          </div>
-          <h1 class="article-main-title">[Headline]</h1>
-          <div class="article-author-row">
-            <img src="assets/images/profile/manjeet_profile.png" alt="Manjeet Singh Katare">
-            <div>
-              <div class="author-name">Manjeet Singh Katare</div>
-              <div class="author-title">Digital Marketing & Creative Strategy</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="article-featured-image">
-          <img src="[image_path]" alt="[caption]">
-        </div>
-
-        <div class="article-content">
-          <p>[Paragraph 1...]</p>
-          <h2>[Key Takeaway / Subheading]</h2>
-          <p>[Paragraph 2...]</p>
-          <blockquote>[Key Insight]</blockquote>
-        </div>
-      </article>
-      */
-      -->
     </div>
   </main>
 
@@ -233,7 +266,7 @@
     <div class="container">
       <div class="footer-bottom-row" style="border: none; padding-top: 0;">
         <div>&copy; 2026 Manjeet Singh Katare. All rights reserved.</div>
-        <a href="index.html" class="back-to-top-btn">&larr; Back to Main Portfolio</a>
+        <a href="index.html#blog" class="back-to-top-btn">&larr; Back to Main Portfolio</a>
       </div>
     </div>
   </footer>

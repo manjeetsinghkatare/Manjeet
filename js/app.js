@@ -6,19 +6,23 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  initMobileMenu();
-  initMobileHeaderScroll();
-  initPortfolioFilters();
-  initModalLightbox();
-  initSocialsModal();
-  initCertGallery();
-  initContactForm();
-  initScrollSpy();
-  initScrollReveal();
-  initBackToTop();
-  initWordPressBlog();
-  loadSingleArticle();
+  const safeRun = (fn, name) => {
+    try { if (typeof fn === 'function') fn(); }
+    catch (e) { console.warn('Error in ' + name + ':', e); }
+  };
+  safeRun(initTheme, 'initTheme');
+  safeRun(initMobileMenu, 'initMobileMenu');
+  safeRun(initMobileHeaderScroll, 'initMobileHeaderScroll');
+  safeRun(initPortfolioFilters, 'initPortfolioFilters');
+  safeRun(initModalLightbox, 'initModalLightbox');
+  safeRun(initSocialsModal, 'initSocialsModal');
+  safeRun(initCertGallery, 'initCertGallery');
+  safeRun(initContactForm, 'initContactForm');
+  safeRun(initScrollSpy, 'initScrollSpy');
+  safeRun(initScrollReveal, 'initScrollReveal');
+  safeRun(initBackToTop, 'initBackToTop');
+  safeRun(initWordPressBlog, 'initWordPressBlog');
+  safeRun(loadSingleArticle, 'loadSingleArticle');
 });
 
 /* ==========================================================================
@@ -793,9 +797,352 @@ function stripHtmlTags(html) {
   return (tmp.textContent || tmp.innerText || '').trim();
 }
 
+
+
+/* ==========================================================================
+   12b. Standalone Comprehensive Marketing Case Studies & Masterclasses
+   ========================================================================== */
+const localArticles = {
+  'seo-search-intent': {
+    title: "Deconstructing Search Intent: How We Ranked 5+ Commercial Websites on Google's First Page",
+    category: "Organic SEO & Search Architecture",
+    date: "November 2026",
+    readingMinutes: 10,
+    image: "assets/images/blog/seo_search_intent_featured.jpg",
+    excerpt: "An exhaustive technical breakdown of multi-client organic SEO campaigns across clinical healthcare, coworking, and B2B sectors. Covers keyword intent clustering, entity-based content architecture, Core Web Vitals, and authoritative backlink acquisition.",
+    contentHtml: `
+      <p class="article-lead">
+        Search Engine Optimization in 2026 is an exact engineering discipline combining behavioral psychology, semantic entity mapping, and technical infrastructure. Ranking on Google's Page 1 is no longer achieved by keyword density or spun content; it demands absolute alignment with user intent, topical authority, and exceptional Core Web Vitals. Below is the comprehensive playbook executed across 5+ commercial business websites that transformed organic search into their highest-ROI customer acquisition channel.
+      </p>
+
+      <h2>1. The Strategic Flaw in Conventional SEO: Volume vs Intent</h2>
+      <p>
+        The most common failure in digital marketing campaigns is optimizing for vanity search volume rather than transactional intent. A keyword with 40,000 monthly searches often yields high bounce rates and negligible conversions, whereas a high-intent search query with 350 monthly searches can drive continuous qualified leads.
+      </p>
+      <p>
+        Across our client campaigns, we implemented a 4-tier Search Intent Framework:
+      </p>
+      <ul>
+        <li><strong>Informational Intent:</strong> Broad top-of-funnel educational queries (e.g., <em>"what causes recurring hyperpigmentation"</em>). Used strategically for authority building and retargeting pixel capture.</li>
+        <li><strong>Navigational Intent:</strong> Branded queries where searchers actively seek a specific company, service hub, or doctor.</li>
+        <li><strong>Commercial Investigation:</strong> High-consideration comparison queries (e.g., <em>"best coworking spaces for tech startups Mumbai"</em>, <em>"chemical peel vs fractional laser results"</em>).</li>
+        <li><strong>Transactional & Local Intent:</strong> High-converting, wallet-out search queries (e.g., <em>"dermatology clinic appointment Gwalior"</em>, <em>"custom corporate furniture manufacturer Delhi NCR"</em>).</li>
+      </ul>
+
+      <blockquote>
+        "Our data across 5 client domains demonstrated that commercial investigation and transactional queries convert at 12.8% to 19.4%, compared to less than 0.35% for generic informational keywords."
+      </blockquote>
+
+      <h2>2. Keyword Intent Clustering & Semantic Siloing</h2>
+      <p>
+        Using Semrush, Ahrefs, and Google Search Console API data, we scraped and grouped over 1,200 search queries into contextual clusters rather than individual target keywords. We analyzed SERP features—including People Also Ask (PAA) accordions, Knowledge Panels, and Local 3-Packs—to determine exactly how Google's neural matching models interpret searcher expectations.
+      </p>
+      <p>
+        To dominate these clusters, we constructed a hierarchical <strong>Hub-and-Spoke Content Architecture</strong>:
+      </p>
+      <ol>
+        <li><strong>Pillar Hub Pages (Core Service/Category):</strong> Comprehensive, 2,800+ word technical and service guides addressing the overarching commercial offering.</li>
+        <li><strong>Spoke Content Pages (Specialized Cluster Queries):</strong> 5 to 8 supporting articles that exhaustively answer specific long-tail patient or buyer inquiries.</li>
+        <li><strong>Internal Linking Graph:</strong> Mathematical interlinking where all spokes pass page authority upward to the primary pillar page using semantic, non-cannibalizing anchor text.</li>
+      </ol>
+
+      <h2>3. Technical SEO, Schema Markup & Core Web Vitals</h2>
+      <p>
+        Great content cannot rank on a slow, technically flawed foundation. We conducted exhaustive technical audits across all 5 domains using Google Search Console, Screaming Frog SEO Spider, and Lighthouse:
+      </p>
+      <ul>
+        <li><strong>Largest Contentful Paint (LCP):</strong> Reduced to under 1.4 seconds by serving next-gen WebP/AVIF images with explicit aspect ratios, priority hero preloading, and caching headers.</li>
+        <li><strong>Cumulative Layout Shift (CLS):</strong> Stabilized to 0.00 by reserving dimensions for all media containers and preventing dynamic font shifts.</li>
+        <li><strong>Interaction to Next Paint (INP):</strong> Maintained under 120ms with deferral of non-critical third-party JavaScript tracking scripts.</li>
+        <li><strong>Structured Data (JSON-LD):</strong> Implemented validated schema including <code>LocalBusiness</code>, <code>MedicalBusiness</code>, <code>Organization</code>, <code>BreadcrumbList</code>, and <code>FAQPage</code> to claim dominant SERP real estate with rich snippets.</li>
+      </ul>
+
+      <h2>4. Authoritative Backlink Acquisition & Digital PR</h2>
+      <p>
+        Rather than relying on automated directory submissions or low-quality private blog networks (PBNs), our off-page strategy was strictly editorial. We monitored industry discussions, pitched guest columns to verified trade journals, and established localized citation profiles with consistent Name, Address, and Phone (NAP) data. Every acquired backlink had a Domain Authority (DA) above 45 and organic search traffic in Google's index.
+      </p>
+
+      <h2>5. The Verified Business Impact</h2>
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9375rem; background: var(--bg-surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <thead>
+            <tr style="background: var(--bg-surface-elevated); border-bottom: 2px solid var(--border-subtle); text-align: left;">
+              <th style="padding: 0.85rem 1rem;">Client Industry</th>
+              <th style="padding: 0.85rem 1rem;">Primary Organic Gain</th>
+              <th style="padding: 0.85rem 1rem;">Page 1 Target Keywords</th>
+              <th style="padding: 0.85rem 1rem;">Inbound Lead Lift</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600;">Clinical Dermatology & Healthcare</td>
+              <td style="padding: 0.85rem 1rem; color: var(--accent-green); font-weight: 700;">+285% Organic Clicks</td>
+              <td style="padding: 0.85rem 1rem;">14 Top-10 Queries</td>
+              <td style="padding: 0.85rem 1rem;">+185% Patient Consultations</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600;">B2B Commercial Interior & Office</td>
+              <td style="padding: 0.85rem 1rem; color: var(--accent-green); font-weight: 700;">+210% Impression Growth</td>
+              <td style="padding: 0.85rem 1rem;">9 Page 1 Keywords</td>
+              <td style="padding: 0.85rem 1rem;">+140% RFP Quotation Inquiries</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 0.85rem 1rem; font-weight: 600;">Premium Coworking & Flex Space</td>
+              <td style="padding: 0.85rem 1rem; color: var(--accent-green); font-weight: 700;">+340% Local Discovery</td>
+              <td style="padding: 0.85rem 1rem;">Google Maps 3-Pack Top 1</td>
+              <td style="padding: 0.85rem 1rem;">+220% Desk Tour Bookings</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="article-highlight-box" style="padding: 1.5rem; border-radius: var(--radius-lg); background: var(--bg-surface-elevated); border-left: 4px solid var(--accent-primary); margin: 2.5rem 0;">
+        <h4 style="margin: 0 0 0.5rem; color: var(--text-primary); font-family: var(--font-display);">Executive Strategic Summary</h4>
+        <p style="margin: 0; color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">
+          Search marketing is a sustainable, compounding asset. When businesses align technical speed, entity-based topical depth, and searcher intent fulfillment, they break free from the perpetual cycle of escalating ad spend and secure predictable inbound revenue.
+        </p>
+      </div>
+    `
+  },
+
+  'medical-clinical-seo': {
+    title: "The On-Page Optimization Architecture for Medical & Clinical Practices",
+    category: "Healthcare & Local SEO",
+    date: "October 2026",
+    readingMinutes: 8,
+    image: "assets/images/work/dermatology_skincare_clinic.jpg",
+    excerpt: "How structuring localized condition queries, clinical service pages, verified medical doctor schema, and Google Maps Local Pack integration generated continuous qualified patient inquiries.",
+    contentHtml: `
+      <p class="article-lead">
+        Medical practices and clinical healthcare institutions operate under Google's most scrutinized ranking guidelines: <strong>Your Money or Your Life (YMYL)</strong>. Search engines enforce strict validation protocols to protect patient safety. Achieving top rankings requires demonstrating unmatched <strong>Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T)</strong>. Here is the operational framework we engineered to establish clinical authority and generate predictable patient bookings.
+      </p>
+
+      <h2>1. Mapping the 3-Stage Patient Decision Journey</h2>
+      <p>
+        Patients navigating medical conditions do not search in the same manner as eCommerce shoppers. They progress through three distinct cognitive phases:
+      </p>
+      <ul>
+        <li><strong>Phase 1: Symptom Exploration (Informational):</strong> The searcher experiences symptoms (e.g., <em>"why is my acne flaring up after laser"</em>). They need empathetic, medically verified explanations without immediate sales pressure.</li>
+        <li><strong>Phase 2: Clinical Treatment Discovery (Commercial Investigation):</strong> The searcher evaluates clinical procedures (e.g., <em>"chemical peel vs fractional CO2 laser for deep scarring"</em>). They compare recovery times, treatment protocols, and safety records.</li>
+        <li><strong>Phase 3: Specialist Selection & Booking (Transactional):</strong> The searcher searches for verified doctors in their vicinity (e.g., <em>"best dermatologist clinic near me"</em>, <em>"skin doctor consultation Gwalior"</em>).</li>
+      </ul>
+
+      <h2>2. Clinical Page Architecture & E-E-A-T Compliance</h2>
+      <p>
+        To ensure 100% compliance with Google's medical quality raters guidelines, every condition and procedure page was constructed with:
+      </p>
+      <ol>
+        <li><strong>Verified Medical Reviewer Bylines:</strong> Clear author attribution with qualifications (e.g., MBBS, MD Dermatology), medical council registration numbers, and clickable links to professional credentials.</li>
+        <li><strong>Transparent Procedural Breakdowns:</strong> Clinical steps, expected pain levels, pre-treatment guidelines, post-procedure aftercare protocols, and realistic timelines.</li>
+        <li><strong>Verified FAQ Schema (JSON-LD):</strong> Answering exact patient objections (cost ranges, side effects, recovery downtime) directly in search snippets.</li>
+      </ol>
+
+      <h2>3. Google Business Profile (GBP) & Local 3-Pack Mastery</h2>
+      <p>
+        Over 65% of clinical appointment bookings originate directly from Google Maps and Local 3-Pack results on mobile devices. We optimized the clinical Google Business Profile through:
+      </p>
+      <ul>
+        <li>Primary category precision (e.g., <em>Dermatologist</em>) paired with secondary service categories (<em>Skin Care Clinic</em>, <em>Medical Spa</em>).</li>
+        <li>Consistent Name, Address, and Phone Number (NAP) synchronization across 40+ premier healthcare directories and medical aggregator databases.</li>
+        <li>Proactive review collection workflows encouraging detailed patient feedback referencing specific treatments, paired with prompt, compliant clinical replies.</li>
+        <li>Regular geo-tagged updates showcasing the clinic facility, medical equipment, and doctor consultations.</li>
+      </ul>
+
+      <h2>4. Results: Predictable Patient Acquisition</h2>
+      <p>
+        Within 120 days of rolling out this clinical SEO architecture:
+      </p>
+      <ul>
+        <li><strong>+185% increase</strong> in confirmed clinic appointment bookings originating from organic search.</li>
+        <li><strong>#1 ranking</strong> in Google Maps Local Pack for 8 high-value specialized medical queries across the primary catchment area.</li>
+        <li><strong>Zero traffic disruption</strong> during major Google Core Algorithm and Helpful Content Updates due to rigorous medical fact-checking and schema validation.</li>
+      </ul>
+    `
+  },
+
+  'meta-ads-roas': {
+    title: "The ROAS Blueprint: Synchronizing Meta Ads with Conversion Tracking",
+    category: "Performance Marketing",
+    date: "September 2026",
+    readingMinutes: 9,
+    image: "assets/images/work/mumbai_coworking_seo.png",
+    excerpt: "Why campaign budget optimization (CBO) and lookalike audiences require airtight server-side Conversions API (CAPI) to protect ad spend efficiency.",
+    contentHtml: `
+      <p class="article-lead">
+        With signal loss resulting from browser privacy protocols, ad blockers, and Apple's App Tracking Transparency (ATT), running scalable Meta ad campaigns requires sophisticated tracking infrastructure. Relying solely on client-side pixel tracking blinds Meta's algorithmic bidding engine. Here is the operational framework utilized to achieve a consistent 3.4x to 4.8x Return on Ad Spend (ROAS).
+      </p>
+
+      <h2>1. The Tracking Gap: Why Traditional Pixels Fail</h2>
+      <p>
+        Standard browser-based Meta Pixels lose between 20% and 35% of conversion events due to browser restrictions, iOS privacy features, and script blockers. When Meta cannot observe downstream purchases or lead submissions:
+      </p>
+      <ul>
+        <li>Campaign Budget Optimization (CBO) algorithms optimize for cheap clicks rather than high-value purchasers.</li>
+        <li>Lookalike audiences degrade because the seed customer data is incomplete.</li>
+        <li>Cost per acquisition (CPA) escalates by 30% to 50% across ad sets.</li>
+      </ul>
+
+      <h2>2. Server-Side Conversions API (CAPI) & Deduplication</h2>
+      <p>
+        To restore 100% data fidelity, we engineered a dual-stream tracking setup connecting client-side browser events with server-side <strong>Meta Conversions API (CAPI)</strong>:
+      </p>
+      <ol>
+        <li><strong>Event Deduplication:</strong> Passing a shared unique <code>event_id</code> on both client and server payloads so Meta never counts duplicate purchases or leads.</li>
+        <li><strong>Customer Information Parameters:</strong> Securely hashing first-party identifiers (SHA-256 encrypted email, phone, city, state, zip) to achieve an <strong>Event Match Quality (EMQ) score above 8.5 out of 10</strong>.</li>
+        <li><strong>Offline Event Uploads:</strong> Synchronizing CRM closed-won deal stages back into Meta Ads Manager to train algorithms on actual revenue rather than vanity inquiries.</li>
+      </ol>
+
+      <h2>3. Modern Account Architecture: Consolidated vs Segmented</h2>
+      <p>
+        We dismantled complex multi-ad-set configurations in favor of the <strong>Consolidated Account Structure (CAS)</strong>:
+      </p>
+      <ul>
+        <li><strong>Advantage+ Campaign Budget (CBO):</strong> Giving Meta's machine-learning engine the flexibility to distribute budget dynamically across top-performing ad sets in real time.</li>
+        <li><strong>Broad & Seed Lookalikes:</strong> Pairing open demographic targeting with tight 1% to 2% Lookalike audiences built exclusively from highest-LTV customer CRM data.</li>
+        <li><strong>Exclusion Discipline:</strong> Strictly excluding past 30-day purchasers from prospecting campaigns to prevent ad spend waste on existing customers.</li>
+      </ol>
+
+      <h2>4. Creative Testing: The Primary Performance Lever</h2>
+      <p>
+        In modern paid social, creative is the targeting mechanism. We deployed a disciplined 3x3 Creative Matrix:
+      </p>
+      <ul>
+        <li><strong>Direct Pain-Point Hook:</strong> Addressing the primary customer frustration within the opening 2.5 seconds.</li>
+        <li><strong>Social Proof Case Study:</strong> Split-screen visual transformations and verified customer testimonial reels.</li>
+        <li><strong>High-Velocity Feature Walkthrough:</strong> Demonstrating exactly how the product or service eliminates friction.</li>
+      </ul>
+      <p>
+        This methodical synergy of server-side data accuracy, streamlined budget allocation, and continuous creative testing generated <strong>3.4x to 4.8x ROAS</strong> while simultaneously cutting Cost Per Lead (CPL) by 38%.
+      </p>
+    `
+  },
+
+  'video-hooks-creative': {
+    title: "Data-Driven Creatives: Why Visual Pacing and Thumb-Stopping Hooks Drive Conversions",
+    category: "Creative Video Strategy",
+    date: "August 2026",
+    readingMinutes: 7,
+    image: "assets/images/work/youtube_channel_art.png",
+    excerpt: "Bridging Premiere Pro and After Effects video workflows with paid ad metrics to maximize 3-second hook rate and lower customer acquisition costs.",
+    contentHtml: `
+      <p class="article-lead">
+        In the fast-scrolling feed environments of Instagram Reels, YouTube Shorts, and TikTok, the commercial success of a video campaign is determined within the opening 3 seconds. An exceptional value proposition is useless if 80% of viewers scroll past before hearing it. Here is how we connect video editing workflows in Adobe Premiere Pro and After Effects with performance marketing metrics to engineer video creatives that convert.
+      </p>
+
+      <h2>1. The 3-Second Hook Rate: The Linchpin of Video ROI</h2>
+      <p>
+        Hook Rate is mathematically defined as:
+      </p>
+      <div style="background: var(--bg-surface-elevated); padding: 1rem 1.5rem; border-radius: var(--radius-md); font-family: var(--font-display); font-size: 1rem; border-left: 3px solid var(--accent-primary); margin: 1.5rem 0;">
+        <strong>Hook Rate (%) = (3-Second Continuous Video Views / Total Impressions) × 100</strong>
+      </div>
+      <p>
+        Industry benchmarks hover around 18% to 22%. By implementing specific visual and auditory disruptors in our editing pipeline, we elevated average client hook rates to <strong>38% to 46%</strong>:
+      </p>
+      <ul>
+        <li><strong>Visual Pattern Interrupts:</strong> Initiating with dynamic camera motion, unexpected object interactions, or split-screen contrast rather than static talking heads.</li>
+        <li><strong>High-Contrast Kinetic Typography:</strong> Animating keyword subtitles in bold colors (yellow/white on dark background) so viewers grasp the core message with sound muted.</li>
+        <li><strong>Audio Micro-Markers:</strong> Pairing visual transitions with subtle whoosh, riser, or pop sound effects to capture subconscious auditory attention.</li>
+      </ul>
+
+      <h2>2. Visual Pacing: Keeping the Retention Curve Flat</h2>
+      <p>
+        Viewer drop-off occurs whenever the screen remains static for longer than 2.5 seconds. In Adobe Premiere Pro, we execute a rigorous pacing rule:
+      </p>
+      <ol>
+        <li><strong>B-Roll Layering:</strong> Introducing cutaway footage, close-ups, or screen recordings every 1.8 to 2.2 seconds.</li>
+        <li><strong>Speed Ramping & Push-Ins:</strong> Subtle scale keyframes (100% to 108% zoom) during key verbal emphasis to maintain forward visual momentum.</li>
+        <li><strong>Motion Graphic Overlays in After Effects:</strong> Highlight boxes, animated arrows, and statistic badges that visually reinforce complex spoken data.</li>
+      </ol>
+
+      <h2>3. Audio Engineering: Clarity Meets Energy</h2>
+      <p>
+        Poor audio causes instant abandonment. Our standardized audio mastering chain includes:
+      </p>
+      <ul>
+        <li><strong>Vocal Presence:</strong> High-pass filtering at 80Hz, parametric EQ boosting presence around 2.5kHz–4kHz, and hard limiting dialogue to -3dB peak.</li>
+        <li><strong>Dynamic Ducking:</strong> Automating background music volume to duck by -14dB beneath dialogue and swell during silent transitional beats.</li>
+      </ul>
+
+      <h2>4. The Commercial Outcome</h2>
+      <p>
+        Applying this data-driven creative methodology across 30+ promotional videos delivered a <strong>42% increase in 3-second hook rates</strong>, drove click-through rates (CTR) from 1.1% to 2.9%, and reduced overall Customer Acquisition Cost (CAC) by 28%.
+      </p>
+    `
+  }
+};
+
+
+/* ==========================================================================
+   13. Single Article Dynamic Viewer (article.html)
+   ========================================================================== */
+
+/* ==========================================================================
+   12. WordPress REST API Dynamic Blog Engine (with Rich Fallback)
+   ========================================================================== */
 async function initWordPressBlog() {
   const blogGrid = document.getElementById('blog-grid');
   if (!blogGrid) return;
+
+  const localCardsHtml = [
+    {
+      id: 'seo-search-intent',
+      title: "Deconstructing Search Intent: How We Ranked 5+ Commercial Websites on Google's First Page",
+      cat: "Organic SEO",
+      date: "November 2026",
+      img: "assets/images/blog/seo_search_intent_featured.jpg",
+      excerpt: "An exhaustive technical breakdown of multi-client organic SEO campaigns executed across clinical healthcare and commercial B2B sectors.",
+      read: "10 min read"
+    },
+    {
+      id: 'medical-clinical-seo',
+      title: "The On-Page Optimization Architecture for Medical & Clinical Practices",
+      cat: "Healthcare SEO",
+      date: "October 2026",
+      img: "assets/images/work/dermatology_skincare_clinic.jpg",
+      excerpt: "How structuring localized condition queries, clinical service pages, and medical FAQ schema generated continuous qualified patient inquiries.",
+      read: "8 min read"
+    },
+    {
+      id: 'meta-ads-roas',
+      title: "The ROAS Blueprint: Synchronizing Meta Ads with Conversion Tracking",
+      cat: "Performance Ads",
+      date: "September 2026",
+      img: "assets/images/work/mumbai_coworking_seo.png",
+      excerpt: "Why campaign budget optimization (CBO) and lookalike audiences require airtight server-side Conversions API (CAPI) to protect ad spend efficiency.",
+      read: "9 min read"
+    }
+  ].map(item => `
+    <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=${item.id}'">
+      <div class="blog-media-wrap">
+        <a href="article.html?id=${item.id}" tabindex="-1" aria-hidden="true" style="display:block; width:100%; height:100%;">
+          <img src="${item.img}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
+        </a>
+        <span class="blog-status-badge">Case Study</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat-date">
+          <span class="blog-cat">${item.cat}</span>
+          <span>•</span>
+          <span>${item.date}</span>
+        </div>
+        <h3 class="blog-title">
+          <a href="article.html?id=${item.id}" style="color: inherit; text-decoration: none;">
+            ${item.title}
+          </a>
+        </h3>
+        <p class="blog-excerpt">
+          ${item.excerpt}
+        </p>
+        <div class="blog-footer">
+          <span>${item.read}</span>
+          <a href="article.html?id=${item.id}" class="blog-read-link" onclick="event.stopPropagation()">
+            Read Article &rarr;
+          </a>
+        </div>
+      </div>
+    </article>
+  `).join('');
 
   try {
     const response = await fetch(WP_API_URL);
@@ -804,22 +1151,15 @@ async function initWordPressBlog() {
     }
 
     const posts = await response.json();
-
     if (!Array.isArray(posts) || posts.length === 0) {
-      blogGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: var(--text-secondary);">
-          <p>No published articles found at the moment. New publications coming soon!</p>
-        </div>
-      `;
+      blogGrid.innerHTML = localCardsHtml;
       return;
     }
 
-    const cardsHtml = posts.map(post => {
-      // 1. Title (decoded)
+    const wpCardsHtml = posts.map(post => {
       const rawTitle = post.title && post.title.rendered ? post.title.rendered : 'Untitled Publication';
       const cleanTitle = decodeHtmlEntities(rawTitle);
 
-      // 2. Excerpt (cleaned of tags & WordPress trailing read more)
       let cleanExcerpt = stripHtmlTags(post.excerpt ? post.excerpt.rendered : '');
       cleanExcerpt = cleanExcerpt.replace(/Continue reading.*$/i, '').trim();
       if (!cleanExcerpt) {
@@ -828,7 +1168,6 @@ async function initWordPressBlog() {
         cleanExcerpt = cleanExcerpt.slice(0, 187) + '...';
       }
 
-      // 3. Date
       let formattedDate = 'Recent';
       if (post.date) {
         try {
@@ -841,8 +1180,7 @@ async function initWordPressBlog() {
         } catch (e) {}
       }
 
-      // 4. Featured Image from _embedded
-      let featuredImageUrl = 'assets/images/branding/portfolio_featured_thumbnail.png';
+      let featuredImageUrl = 'assets/images/blog/youre_welcome_featured.png';
       const mediaItem = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0];
       if (mediaItem) {
         featuredImageUrl = (mediaItem.media_details && mediaItem.media_details.sizes && mediaItem.media_details.sizes.large && mediaItem.media_details.sizes.large.source_url) ||
@@ -851,28 +1189,23 @@ async function initWordPressBlog() {
                            featuredImageUrl;
       }
 
-      // 5. Category from _embedded
-      let category = 'Marketing Insights';
+      let category = 'Digital Marketing';
       const termItem = post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0];
       if (termItem && termItem.name) {
         category = decodeHtmlEntities(termItem.name);
       }
 
-      // 6. Reading Time Calculation
       const contentText = stripHtmlTags((post.content && post.content.rendered) || '');
       const words = contentText.split(/\s+/).filter(Boolean).length;
       const readingMinutes = Math.max(2, Math.ceil(words / 200));
 
-      // 7. Post Link — points strictly to article.html?id=${post.id}
-      const postUrl = `article.html?id=${post.id}`;
-
       return `
-        <article class="blog-card">
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=${post.id}'">
           <div class="blog-media-wrap">
             <a href="article.html?id=${post.id}" tabindex="-1" aria-hidden="true" style="display:block; width:100%; height:100%;">
               <img src="${featuredImageUrl}" alt="${cleanTitle.replace(/"/g, '&quot;')}" loading="lazy">
             </a>
-            <span class="blog-status-badge">Live Article</span>
+            <span class="blog-status-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">Live Article</span>
           </div>
           <div class="blog-body">
             <div class="blog-cat-date">
@@ -889,8 +1222,8 @@ async function initWordPressBlog() {
               ${cleanExcerpt}
             </p>
             <div class="blog-footer">
-              <span>Reading Time: ${readingMinutes} min read</span>
-              <a href="article.html?id=${post.id}" class="blog-read-link" style="color: var(--accent-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+              <span>${readingMinutes} min read</span>
+              <a href="article.html?id=${post.id}" class="blog-read-link" onclick="event.stopPropagation()">
                 Read Article &rarr;
               </a>
             </div>
@@ -899,23 +1232,14 @@ async function initWordPressBlog() {
       `;
     }).join('');
 
-    blogGrid.innerHTML = cardsHtml;
+    blogGrid.innerHTML = wpCardsHtml + localCardsHtml;
   } catch (error) {
-    console.error('Error fetching WordPress blog posts:', error);
-    blogGrid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 2.5rem; color: var(--text-secondary);">
-        <p style="margin-bottom: 0.75rem;">Unable to load live articles right now.</p>
-        <a href="blog.html" class="btn btn-secondary btn-sm" style="display: inline-flex; margin-top: 0.5rem;">
-          <span>Explore Blog Archive</span>
-        </a>
-      </div>
-    `;
+    console.warn('Using local case studies fallback for blog:', error);
+    blogGrid.innerHTML = localCardsHtml;
   }
 }
 
-/* ==========================================================================
-   13. Single Article Dynamic Viewer (article.html)
-   ========================================================================== */
+
 async function loadSingleArticle() {
   const container = document.getElementById('articleContainer');
   if (!container) return;
@@ -929,14 +1253,71 @@ async function loadSingleArticle() {
       <div class="article-state-box">
         <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary);">No Article Specified</h2>
         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Please select an article from the blog section or return to the portfolio.</p>
-        <a href="index.html#blog" class="btn btn-primary">
-          &larr; Back to Portfolio
+        <a href="blog.html" class="btn btn-primary">
+          &larr; View All Articles
         </a>
       </div>
     `;
     return;
   }
 
+  // 1. Check local comprehensive case studies first
+  if (localArticles && localArticles[postId]) {
+    const article = localArticles[postId];
+    document.title = `${article.title} — Manjeet Singh Katare`;
+
+    container.innerHTML = `
+      <div class="article-back-nav">
+        <a href="blog.html" class="article-back-btn">
+          &larr; Back to All Articles
+        </a>
+      </div>
+
+      <header class="article-header">
+        <div class="article-meta-row">
+          <span class="article-category-badge">${article.category}</span>
+          <span>•</span>
+          <span>${article.date}</span>
+          <span>•</span>
+          <span>${article.readingMinutes} min read</span>
+        </div>
+
+        <h1 class="article-main-title">${article.title}</h1>
+
+        <div class="article-author-card">
+          <img src="assets/images/profile/manjeet_profile.png" alt="Manjeet Singh Katare" class="article-author-avatar" onerror="this.src='assets/images/branding/m_logo.png'">
+          <div>
+            <div class="article-author-name">Manjeet Singh Katare</div>
+            <div class="article-author-role">Digital Marketing & Creative Strategy Specialist</div>
+          </div>
+        </div>
+      </header>
+
+      ${article.image ? `
+        <div class="article-featured-media">
+          <img src="${article.image}" alt="${article.title.replace(/"/g, '&quot;')}">
+        </div>
+      ` : ''}
+
+      <div class="article-content">
+        ${article.contentHtml}
+      </div>
+
+      <div class="article-bottom-actions">
+        <a href="blog.html" class="btn btn-secondary">
+          &larr; Back to All Articles
+        </a>
+        <a href="index.html#contact" class="btn btn-primary">
+          Discuss This Strategy &rarr;
+        </a>
+      </div>
+    `;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  // 2. Fallback to WordPress REST API for live WP posts
   try {
     const response = await fetch(`https://public-api.wordpress.com/wp/v2/sites/manjeetsdigitalmarketingblog.wordpress.com/posts/${postId}?_embed=1`);
     if (!response.ok) {
@@ -944,13 +1325,10 @@ async function loadSingleArticle() {
     }
 
     const post = await response.json();
-
-    // 1. Title (decoded)
     const rawTitle = post.title && post.title.rendered ? post.title.rendered : 'Untitled Article';
     const cleanTitle = decodeHtmlEntities(rawTitle);
     document.title = `${cleanTitle} — Manjeet Singh Katare`;
 
-    // 2. Date
     let formattedDate = 'Recently Published';
     if (post.date) {
       try {
@@ -963,19 +1341,16 @@ async function loadSingleArticle() {
       } catch (e) {}
     }
 
-    // 3. Category from embedded taxonomy
     let category = 'Marketing Strategy & Growth';
     const termItem = post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0];
     if (termItem && termItem.name) {
       category = decodeHtmlEntities(termItem.name);
     }
 
-    // 4. Reading Time calculation
     const contentText = stripHtmlTags((post.content && post.content.rendered) || '');
     const words = contentText.split(/\s+/).filter(Boolean).length;
     const readingMinutes = Math.max(2, Math.ceil(words / 200));
 
-    // 5. Featured Image
     let featuredImageUrl = '';
     const mediaItem = post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0];
     if (mediaItem) {
@@ -985,14 +1360,12 @@ async function loadSingleArticle() {
                          '';
     }
 
-    // 6. Full Article HTML Content
     const contentHtml = (post.content && post.content.rendered) || '<p>No content available for this publication.</p>';
 
-    // Render complete responsive article container
     container.innerHTML = `
       <div class="article-back-nav">
-        <a href="index.html#blog" class="article-back-btn">
-          &larr; Back to Portfolio Articles
+        <a href="blog.html" class="article-back-btn">
+          &larr; Back to All Articles
         </a>
       </div>
 
@@ -1027,7 +1400,7 @@ async function loadSingleArticle() {
       </div>
 
       <div class="article-bottom-actions">
-        <a href="index.html#blog" class="btn btn-secondary">
+        <a href="blog.html" class="btn btn-secondary">
           &larr; Back to All Articles
         </a>
         <a href="index.html#contact" class="btn btn-primary">
@@ -1036,7 +1409,6 @@ async function loadSingleArticle() {
       </div>
     `;
 
-    // Smooth scroll to top of reading area
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
   } catch (error) {
@@ -1044,15 +1416,10 @@ async function loadSingleArticle() {
     container.innerHTML = `
       <div class="article-state-box">
         <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary);">Unable to Load Article</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem;">We could not fetch this publication from the WordPress headless backend. It might be unpublished or the ID is invalid.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="index.html#blog" class="btn btn-primary">
-            &larr; Back to Portfolio
-          </a>
-          <button onclick="window.location.reload()" class="btn btn-secondary">
-            Retry
-          </button>
-        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">We could not fetch this publication. It might have been moved or the URL is invalid.</p>
+        <a href="blog.html" class="btn btn-primary">
+          &larr; Back to Articles
+        </a>
       </div>
     `;
   }
