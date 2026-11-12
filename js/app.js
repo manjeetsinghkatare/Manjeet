@@ -1,145 +1,138 @@
 /**
- * MANJEET SINGH KATARE — PROFESSIONAL PORTFOLIO
- * Application Scripts & Interactivity
+ * ==========================================================================
+ * MANJEET SINGH KATARE — PORTFOLIO JAVASCRIPT ENGINE
+ * Digifoc-inspired Interactions, Light/Dark Theming, Modal Lightbox & Filters
+ * ==========================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMobileMenu();
+  initMobileHeaderScroll();
   initPortfolioFilters();
   initModalLightbox();
+  initSocialsModal();
+  initCertGallery();
   initContactForm();
   initScrollSpy();
-  initMobileHeaderScroll();
-  initCertGallery();
   initScrollReveal();
-  initSectionNavTransition();
+  initBackToTop();
 });
 
 /* ==========================================================================
-   1. Theme Management (Light / Dark Mode)
+   1. Theme Management (Light Mode Default, Dark Mode Supported)
    ========================================================================== */
 function initTheme() {
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   if (!themeToggleBtn) return;
 
-  const currentTheme = localStorage.getItem('theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-  setTheme(currentTheme);
+  // Retrieve saved preference or default to light
+  const savedTheme = localStorage.getItem('manjeet_portfolio_theme');
+  
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
 
   themeToggleBtn.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const newTheme = isDark ? 'light' : 'dark';
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-
-  // Listen to OS theme changes if user hasn't explicitly chosen
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      setTheme(e.matches ? 'dark' : 'light');
-    }
   });
 }
 
 function setTheme(theme) {
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    if (themeToggleBtn) {
-      themeToggleBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-      `;
-      themeToggleBtn.setAttribute('aria-label', 'Switch to Light Mode');
-      themeToggleBtn.setAttribute('title', 'Switch to Light Mode');
-    }
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    if (themeToggleBtn) {
-      themeToggleBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      `;
-      themeToggleBtn.setAttribute('aria-label', 'Switch to Dark Mode');
-      themeToggleBtn.setAttribute('title', 'Switch to Dark Mode');
-    }
-  }
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('manjeet_portfolio_theme', theme);
 }
 
 /* ==========================================================================
-   2. Mobile Menu Drawer
+   2. Mobile Drawer Navigation
    ========================================================================== */
 function initMobileMenu() {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
+  const closeBtn = document.getElementById('mobileDrawerClose');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
 
   if (!hamburgerBtn || !mobileDrawer) return;
 
-  function toggleMenu() {
-    const isOpen = mobileDrawer.classList.contains('open');
-    if (isOpen) {
-      mobileDrawer.classList.remove('open');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
-      hamburgerBtn.innerHTML = `
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      `;
-      document.body.style.overflow = '';
-    } else {
-      mobileDrawer.classList.add('open');
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
-      hamburgerBtn.innerHTML = `
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      `;
-      document.body.style.overflow = 'hidden';
-    }
+  function openDrawer() {
+    mobileDrawer.classList.add('open');
+    if (drawerBackdrop) drawerBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
   }
 
-  hamburgerBtn.addEventListener('click', toggleMenu);
+  function closeDrawer() {
+    mobileDrawer.classList.remove('open');
+    if (drawerBackdrop) drawerBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }
 
-  const drawerLinks = mobileDrawer.querySelectorAll('a');
-  drawerLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (mobileDrawer.classList.contains('open')) {
-        toggleMenu();
-      }
-    });
+  hamburgerBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
   });
 }
 
 /* ==========================================================================
-   3. Portfolio Filtering Logic
+   3. Mobile Header Scroll Hide/Show
+   ========================================================================== */
+function initMobileHeaderScroll() {
+  const siteHeader = document.querySelector('.site-header');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  if (!siteHeader) return;
+
+  let lastScrollY = window.scrollY || window.pageYOffset;
+  const scrollThreshold = 10;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY || window.pageYOffset;
+    const isMobile = window.innerWidth <= 768;
+    const isDrawerOpen = mobileDrawer && mobileDrawer.classList.contains('open');
+
+    if (!isMobile || isDrawerOpen) {
+      siteHeader.classList.remove('header-hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY <= 40) {
+      siteHeader.classList.remove('header-hidden');
+    } else if (currentScrollY > lastScrollY + scrollThreshold) {
+      siteHeader.classList.add('header-hidden');
+    } else if (currentScrollY < lastScrollY - scrollThreshold) {
+      siteHeader.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   4. Portfolio Category Filter Engine
    ========================================================================== */
 function initPortfolioFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.portfolio-card');
-  const grid = document.querySelector('.portfolio-grid');
+  const cards = document.querySelectorAll('.project-card');
 
   if (!filterBtns.length || !cards.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (btn.classList.contains('active')) return;
-
       filterBtns.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-selected', 'false');
@@ -147,52 +140,42 @@ function initPortfolioFilters() {
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
 
-      const filterValue = btn.getAttribute('data-filter');
-
-      // Trigger subtle filter transition (blur -> fade -> clear)
-      if (grid && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        grid.classList.add('is-filtering');
-      }
+      const filter = btn.getAttribute('data-filter');
 
       cards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category') || '';
-        if (filterValue === 'all' || cardCategory.includes(filterValue)) {
+        const category = card.getAttribute('data-category') || '';
+        if (filter === 'all' || category.includes(filter)) {
           card.style.display = 'flex';
-          card.style.opacity = '';
-          card.removeAttribute('aria-hidden');
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 20);
         } else {
-          card.style.display = 'none';
-          card.style.opacity = '';
-          card.setAttribute('aria-hidden', 'true');
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
         }
       });
-
-      // Smoothly resolve back to resting state
-      if (grid) {
-        requestAnimationFrame(() => {
-          setTimeout(() => {
-            grid.classList.remove('is-filtering');
-          }, 25);
-        });
-      }
     });
   });
 }
 
 /* ==========================================================================
-   4. Modal / Lightbox System Data Dictionary
+   5. Verified Project & Credential Master Database
    ========================================================================== */
 const projectDetails = {
-  // --- Digital Marketing & SEO Work ---
+  // --- Digital Marketing & SEO Case Studies ---
   'youthmonk-seo': {
-    title: '5+ Business Websites: Multi-Sector SEO, Blog Publishing & Backlinking',
+    title: '5+ Commercial Websites: Multi-Sector SEO, Blog Publishing & Backlinking',
     category: 'Digital Marketing & Organic SEO',
     org: 'Agency Client Portfolio (Youthmonk)',
     role: 'Content Writing & Digital Marketing Intern (June 16 – Sep 16, 2026)',
-    tools: 'Google Search Console, Keyword Planner, High-DA Backlinks, Blog Publishing, Technical SEO',
-    outcome: 'Ranked 5+ commercial client websites on page 1 of Google search, driving continuous keyword growth and qualified inbound leads.',
+    tools: 'Google Search Console, Keyword Planner, High-DA Backlinks, Technical SEO, On-Page Architecture',
+    outcome: 'Ranked 5+ commercial client websites on page 1 of Google search, driving continuous organic keyword growth and inbound leads.',
     image: 'assets/images/work/seo_multi_business_analytics.jpg',
-    desc: 'Delivered comprehensive organic search marketing across 5+ commercial client businesses. Key activities included on-page and technical website SEO audits, targeted keyword research, structuring and publishing regular SEO-optimized blog posts, building authoritative external backlinks and directory citations, and monitoring organic ranking trajectories to maintain steady keyword growth.'
+    desc: 'Delivered comprehensive organic search engine optimization across 5+ commercial client businesses spanning healthcare, interior architecture, and corporate services. Key activities included on-page and technical website SEO audits, targeted high-intent keyword research, structuring and publishing regular SEO-optimized blog posts, building authoritative external backlinks and directory citations, and monitoring organic ranking trajectories to maintain steady search growth.'
   },
   'dermatology-seo': {
     title: 'Dermatology & Clinical Skincare: Digital Marketing, SEO & Backlinking',
@@ -200,31 +183,11 @@ const projectDetails = {
     org: 'Confidential Healthcare Client (Dermatology Sector)',
     role: 'Digital Marketing & SEO Associate',
     tools: 'On-Page SEO, Medical Backlinking, Search Console, Local Citation Building, Content Marketing',
-    outcome: 'Significantly improved organic search discovery for specialized skincare treatments and generated steady qualified consultation inquiries.',
-    image: 'assets/images/work/dermatology_skincare_clinic.jpg',
-    desc: 'Executed an end-to-end digital marketing and search optimization program for a specialized dermatology and clinical skincare practice. Core responsibilities included identifying high-intent treatment queries, optimizing on-page service pages, acquiring high-quality healthcare backlinks, managing local business citations, and publishing informative skincare content designed to guide prospective patients through consultation booking.'
-  },
-  'prp-hair-creative': {
-    title: 'Dermatology & Clinical Skincare: Digital Marketing, SEO & Backlinking',
-    category: 'Healthcare SEO & Digital Marketing',
-    org: 'Confidential Healthcare Client (Dermatology Sector)',
-    role: 'Digital Marketing & SEO Associate',
-    tools: 'On-Page SEO, Medical Backlinking, Search Console, Local Citation Building, Content Marketing',
-    outcome: 'Significantly improved organic search discovery for specialized skincare treatments and generated steady qualified consultation inquiries.',
+    outcome: 'Significantly improved organic search discovery for specialized clinical skincare treatments and generated steady qualified consultation inquiries.',
     image: 'assets/images/work/dermatology_skincare_clinic.jpg',
     desc: 'Executed an end-to-end digital marketing and search optimization program for a specialized dermatology and clinical skincare practice. Core responsibilities included identifying high-intent treatment queries, optimizing on-page service pages, acquiring high-quality healthcare backlinks, managing local business citations, and publishing informative skincare content designed to guide prospective patients through consultation booking.'
   },
   'b2b-interior-seo': {
-    title: 'B2B Interior Architecture & Custom Furniture: SEO & Digital Marketing',
-    category: 'B2B SEO & Digital Marketing',
-    org: 'Confidential B2B Commercial Client (Interior & Furniture Design)',
-    role: 'Content Marketing & SEO Strategist',
-    tools: 'B2B Keyword Research, Commercial Backlinking, Long-Tail SEO, On-Page Optimization, Google Analytics',
-    outcome: 'Secured top organic search visibility for high-ticket commercial interior, exterior design, and bespoke corporate wooden furniture inquiries.',
-    image: 'assets/images/work/b2b_interior_furniture_design.jpg',
-    desc: 'Managed comprehensive SEO and digital marketing initiatives for a commercial design firm providing corporate interior/exterior architecture and bespoke wooden furniture craft for enterprises. Developed an exhaustive keyword strategy around commercial fit-outs and architectural woodworking, built authoritative industry backlinks, optimized service landing pages, and published B2B case studies to capture high-value enterprise contracts.'
-  },
-  'mumbai-coworking': {
     title: 'B2B Interior Architecture & Custom Furniture: SEO & Digital Marketing',
     category: 'B2B SEO & Digital Marketing',
     org: 'Confidential B2B Commercial Client (Interior & Furniture Design)',
@@ -244,21 +207,11 @@ const projectDetails = {
     image: 'assets/images/work/orthopedic_bone_healthcare.jpg',
     desc: 'Developed and executed a targeted organic search engine optimization and digital marketing strategy for an orthopedic and bone-health clinic. Focused on optimizing search visibility for orthopedic procedures, joint care, and musculoskeletal treatments. Built authoritative medical and directory backlinks, conducted deep keyword research targeting condition-specific queries, and created patient-friendly medical content to build clinical trust and drive appointment bookings.'
   },
-  'body-contouring': {
-    title: 'Orthopedic & Joint Care Clinic: SEO, Backlinking & Keyword Growth',
-    category: 'Medical & Healthcare SEO',
-    org: 'Confidential Healthcare Client (Orthopedic & Joint Care)',
-    role: 'Healthcare SEO & Digital Marketing Specialist',
-    tools: 'Healthcare SEO, Medical Directory Indexing, High-DA Backlinks, Long-Tail Keyword Discovery, Search Console',
-    outcome: 'Achieved high organic rankings for orthopedic, joint mobility, and bone care search terms, increasing prospective patient inquiries.',
-    image: 'assets/images/work/orthopedic_bone_healthcare.jpg',
-    desc: 'Developed and executed a targeted organic search engine optimization and digital marketing strategy for an orthopedic and bone-health clinic. Focused on optimizing search visibility for orthopedic procedures, joint care, and musculoskeletal treatments. Built authoritative medical and directory backlinks, conducted deep keyword research targeting condition-specific queries, and created patient-friendly medical content to build clinical trust and drive appointment bookings.'
-  },
   'vedalex-lead-gen': {
     title: 'Paid Ads Performance, Brand Growth & 30+ Promotional Assets',
     category: 'Digital Marketing & Paid Ads',
     org: 'VedAlex World Class Products Pvt. Ltd.',
-    role: 'Digital Marketing & Lead Generation Intern / Associate (Oct 2023 – Aug 2025)',
+    role: 'Digital Marketing & Lead Generation Intern (December 2025 – June 2026)',
     tools: 'Meta Ads Manager, Google Ads, Organic SEO, Canva, Photoshop',
     outcome: 'Managed community of 10K+ followers; contributed to campaigns that delivered a 40% increase in product reach and 35% in engagement with 30+ promotional creatives.',
     image: 'assets/images/certificates/vedalex_internship.png',
@@ -300,13 +253,13 @@ const projectDetails = {
   // --- Featured Projects & Simulations ---
   'maarston-craft-compress': {
     title: 'MaarstOn Craft — Image Compress',
-    category: 'Featured Project',
+    category: 'Web Tool / Development',
     org: 'Personal Project (MaarstOn Craft)',
     role: 'Creator & Web Developer',
     tools: 'Image Compression · JavaScript · Web Tool · Browser-Based · Responsive Design',
     outcome: 'Live Web Application: Privacy-first client-side image compression with real-time results.',
     image: 'assets/images/work/maarston_craft_image_compress.png',
-    desc: 'A privacy-first browser-based image compression tool with adjustable compression, real-time results, and client-side processing.'
+    desc: 'A privacy-first browser-based image compression tool with adjustable compression levels, real-time preview results, and 100% client-side processing without uploading any files to external servers.'
   },
   'paddycraft-mba': {
     title: 'PaddyCraft: Eco-Furniture Sustainability Initiative',
@@ -319,14 +272,14 @@ const projectDetails = {
     desc: 'Collaborated on an intensive strategic initiative to solve seasonal crop residue burning across North India by converting paddy straw into sustainable, commercial furniture with an end-to-end go-to-market plan.'
   },
   'tata-genai-analytics': {
-    title: 'TATA GenAI Powered Data Analytics Job Simulation',
+    title: 'Tata – GenAI Powered Data Analytics Job Simulation',
     category: 'Data Analytics & AI',
-    org: 'TATA Group (via Forage)',
+    org: 'Tata (via Forage)',
     role: 'Simulation Participant',
     tools: 'Generative AI, Exploratory Data Analysis, Delinquency Prediction, Executive Data Storytelling',
-    outcome: 'Certificate of Completion (Sep 9, 2026) | Verification Code: 6aa122bd72c3c3711160afc1',
+    outcome: 'Credential ID: 6aa122bd72c3c3711160afc1 (Issued September 2026)',
     image: 'assets/images/certificates/tata_genai_analytics.jpg',
-    desc: 'Completed practical tasks in exploratory data analysis and risk profiling, predicting delinquency with AI models, formulating business reports, and implementing an AI-driven collections strategy.'
+    desc: 'Completed practical tasks authorized by Tata on Forage in exploratory data analysis and risk profiling, predicting delinquency with AI models, formulating business reports, and implementing an AI-driven collections strategy.'
   },
   'accenture-pm': {
     title: 'Accenture North America Project Management Simulation',
@@ -360,8 +313,28 @@ const projectDetails = {
   },
 
   // --- Verified Certifications ---
+  'cert-google-ads-measurement': {
+    title: 'Google Ads Measurement Certification',
+    category: 'Official Google Credential',
+    org: 'Google Digital Academy (Skillshop)',
+    role: 'Certified Measurement Specialist',
+    tools: 'Conversion Tracking, GA4, Attribution Models, Smart Bidding, Performance Metrics',
+    outcome: 'Credential ID: 198214448 (Issued: Oct 25, 2026 · Valid through: Oct 25, 2027)',
+    image: 'assets/images/certificates/google_ads_measurement.png',
+    desc: 'Certified by Google Digital Academy (Skillshop) in critical measurement metrics, translating marketing objectives into measurable goals, conversion tracking, attribution models, and data-driven optimization of Google Ads campaigns.'
+  },
+  'cert-hubspot-email': {
+    title: 'Email Marketing Certified',
+    category: 'Official HubSpot Credential',
+    org: 'HubSpot Academy',
+    role: 'Certified Email Marketing Specialist',
+    tools: 'Contact Management, Segmentation, Deliverability, Email Design, Lead Nurturing, A/B Testing',
+    outcome: 'Certification Code: 05c9608d1d3244b6b94682d694494910 (Issued: Oct 25, 2026 · Valid through: Nov 23, 2028)',
+    image: 'assets/images/certificates/hubspot_email_marketing.png',
+    desc: 'Certified by HubSpot Academy in building effective email marketing strategies: contact segmentation, high-performing email design and sends, deliverability optimization, test metrics, and lifecycle lead nurturing.'
+  },
   'cert-nptel-advertising': {
-    title: 'Advertising & Promotions Management (Elite)',
+    title: 'Advertising & Promotions Management (Elite, 64%)',
     category: 'Verified Credential (IIT ISM Dhanbad)',
     org: 'NPTEL / MoE, Govt. of India / Swayam (IIT Dhanbad)',
     role: 'Elite Certified Candidate (Score: 64% | Assignments: 25/25)',
@@ -408,17 +381,17 @@ const projectDetails = {
     tools: 'Blogging, SEO Backlinking, Content Marketing, Social Media Marketing',
     outcome: 'Official Certificate signed by Ramchandra Kumble (Founder - Youthmonk)',
     image: 'assets/images/certificates/youthmonk_internship.jpg',
-    desc: 'Formally recognized for 3 months of exceptional practical contributions in blogging, SEO backlinking, content marketing, and social media management. Commended for responsibility, sincerity, coordination, and attention to detail.'
+    desc: 'Formally recognized for 3 months of practical contributions in blogging, SEO backlinking, content marketing, and social media management. Commended for responsibility, sincerity, coordination, and attention to detail.'
   },
   'cert-vedalex': {
     title: 'VedAlex Lead Generation Internship Certificate',
     category: 'Official Corporate Experience',
     org: 'VedAlex World Class Products Pvt. Ltd. (Jaipur)',
-    role: 'Digital Marketing & Lead Generation Intern',
-    tools: 'Meta Ads, Google Ads, Organic SEO, Social Management, Graphic Design',
+    role: 'Digital Marketing & Lead Generation Intern (December 2025 – June 2026)',
+    tools: 'Digital Marketing, Lead Gen, Meta Ads, Google Ads, Market Research, Data Analysis',
     outcome: 'Official Certificate signed by Vinki Walia (Senior General Manager)',
     image: 'assets/images/certificates/vedalex_internship.png',
-    desc: 'Certified 6-month internship executing and contributing to paid advertising campaigns, managing a community of 10K+ followers, and designing 30+ promotional creatives.'
+    desc: 'Certified 6-month internship assisting with digital marketing campaigns, lead generation strategies, market research, data analysis, and day-to-day marketing operations.'
   },
   'cert-pimr-meta-ads': {
     title: 'PIMR Certificate of Appreciation — Meta Ads Event Coordinator',
@@ -438,7 +411,7 @@ const projectDetails = {
     tools: 'Power BI Desktop, DAX, Data Cleaning, Interactive Dashboards, KPI Tracking',
     outcome: 'Certificate ID: SC-8K2T6R6PIP (Issued Sep 8, 2026)',
     image: 'assets/images/certificates/skillcourse_power_bi.png',
-    desc: 'Completed intensive 30-day curriculum mastering business intelligence visualization, data modeling, and management report creation.'
+    desc: 'Completed intensive 30-day curriculum mastering business intelligence visualization, data modeling, and executive KPI dashboard creation.'
   },
   'cert-pimr-bootcamp': {
     title: 'PIMR Boot Camp: Corporate Ready & Self Brand',
@@ -503,12 +476,12 @@ const projectDetails = {
 };
 
 /* ==========================================================================
-   5. Modal / Lightbox Interactivity
+   6. Modal / Lightbox Interactivity
    ========================================================================== */
 function initModalLightbox() {
   const modal = document.getElementById('projectModal');
   const closeBtn = document.getElementById('modalCloseBtn');
-  const triggerElements = document.querySelectorAll('[data-project-id]');
+  const triggers = document.querySelectorAll('[data-project-id]');
 
   if (!modal || !closeBtn) return;
 
@@ -540,7 +513,7 @@ function initModalLightbox() {
     document.body.style.overflow = '';
   }
 
-  triggerElements.forEach(el => {
+  triggers.forEach(el => {
     el.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
       e.stopPropagation();
@@ -548,7 +521,6 @@ function initModalLightbox() {
       openModal(id);
     });
 
-    // Keyboard accessibility
     el.addEventListener('keydown', (e) => {
       if (e.target.closest('a')) return;
       if (e.key === 'Enter' || e.key === ' ') {
@@ -562,9 +534,7 @@ function initModalLightbox() {
   closeBtn.addEventListener('click', closeModal);
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
+    if (e.target === modal) closeModal();
   });
 
   document.addEventListener('keydown', (e) => {
@@ -575,7 +545,74 @@ function initModalLightbox() {
 }
 
 /* ==========================================================================
-   6. Contact Form Functionality
+   6b. Social & Community Channels Modal
+   ========================================================================== */
+function initSocialsModal() {
+  const openBtn = document.getElementById('openSocialsModalBtn');
+  const modal = document.getElementById('socialsModal');
+  const closeBtn = document.getElementById('socialsModalCloseBtn');
+
+  if (!openBtn || !modal || !closeBtn) return;
+
+  function openModal() {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
+/* ==========================================================================
+   7. Progressive Disclosure Toggle for Certifications
+   ========================================================================== */
+function initCertGallery() {
+  const toggleBtn = document.getElementById('toggleAllCertsBtn');
+  const collapsible = document.getElementById('allCertsCollapsible');
+  if (!toggleBtn || !collapsible) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = collapsible.classList.contains('open');
+
+    if (!isOpen) {
+      collapsible.classList.add('open');
+      collapsible.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.innerHTML = 'Show Fewer Certifications &uarr;';
+    } else {
+      collapsible.classList.remove('open');
+      collapsible.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.innerHTML = 'View All Certifications (18+) &rarr;';
+      
+      const anchor = document.getElementById('certificationsHeader');
+      if (anchor) {
+        anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+}
+
+/* ==========================================================================
+   8. Contact Form Handling (Mailto & Clipboard Support)
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -589,7 +626,7 @@ function initContactForm() {
 
     const name = document.getElementById('formName').value.trim();
     const email = document.getElementById('formEmail').value.trim();
-    const subject = document.getElementById('formSubject').value.trim() || 'Inquiry from Portfolio Website';
+    const subject = document.getElementById('formSubject').value.trim() || 'Portfolio Inquiry';
     const message = document.getElementById('formMessage').value.trim();
 
     if (!name || !email || !message) {
@@ -601,14 +638,13 @@ function initContactForm() {
     const mailtoUrl = `mailto:manjeetsinghkatare@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
     window.location.href = mailtoUrl;
-
-    showToast('Opening your default email client to send the message...', 'success');
+    showToast('Opening your default email client to send your message...', 'success');
   });
 
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
       const name = document.getElementById('formName').value.trim() || 'Visitor';
-      const email = document.getElementById('formEmail').value.trim() || 'Not provided';
+      const email = document.getElementById('formEmail').value.trim() || 'Not specified';
       const message = document.getElementById('formMessage').value.trim();
 
       if (!message) {
@@ -616,12 +652,12 @@ function initContactForm() {
         return;
       }
 
-      const formattedText = `From: ${name} <${email}>\n\nMessage:\n${message}`;
+      const formatted = `From: ${name} <${email}>\n\nMessage:\n${message}`;
 
-      navigator.clipboard.writeText(formattedText).then(() => {
+      navigator.clipboard.writeText(formatted).then(() => {
         showToast('Message copied to clipboard! You can paste it into any app.', 'success');
       }).catch(() => {
-        showToast('Unable to copy automatically. Please select the text and copy manually.', 'error');
+        showToast('Could not automatically copy. Please copy the text manually.', 'error');
       });
     });
   }
@@ -634,12 +670,12 @@ function initContactForm() {
 
     setTimeout(() => {
       toast.style.display = 'none';
-    }, 5000);
+    }, 4500);
   }
 }
 
 /* ==========================================================================
-   7. Scroll Spy for Navigation Active State
+   9. Active Navigation Scroll Spy
    ========================================================================== */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
@@ -665,133 +701,37 @@ function initScrollSpy() {
   });
 
   sections.forEach(section => observer.observe(section));
-
-  // If user scrolls to the very bottom, ensure #contact is active
-  window.addEventListener('scroll', () => {
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 60)) {
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === '#contact') {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-  }, { passive: true });
 }
 
 /* ==========================================================================
-   8. Mobile-Only Responsive Header Scroll (Hide on scroll down, show on scroll up)
-   ========================================================================== */
-function initMobileHeaderScroll() {
-  const siteHeader = document.querySelector('.site-header');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  if (!siteHeader) return;
-
-  let lastScrollY = window.scrollY || window.pageYOffset;
-  const scrollThreshold = 8;
-
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY || window.pageYOffset;
-    const isMobile = window.innerWidth <= 768;
-    const isDrawerOpen = mobileDrawer && mobileDrawer.classList.contains('open');
-
-    // On desktop, laptop, and tablet (> 768px), or when mobile drawer is open: keep header visible
-    if (!isMobile || isDrawerOpen) {
-      siteHeader.classList.remove('header-hidden');
-      lastScrollY = currentScrollY;
-      return;
-    }
-
-    // Near the top of the page: keep header visible
-    if (currentScrollY <= 40) {
-      siteHeader.classList.remove('header-hidden');
-    } else if (currentScrollY > lastScrollY + scrollThreshold) {
-      // User is scrolling down on mobile: hide header to maximize screen space
-      siteHeader.classList.add('header-hidden');
-    } else if (currentScrollY < lastScrollY - scrollThreshold) {
-      // User is scrolling upward: smoothly reveal header
-      siteHeader.classList.remove('header-hidden');
-    }
-
-    lastScrollY = currentScrollY;
-  }, { passive: true });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      siteHeader.classList.remove('header-hidden');
-    }
-  });
-}
-
-/* ==========================================================================
-   9. Certifications Gallery & Progressive Disclosure Toggle
-   ========================================================================== */
-function initCertGallery() {
-  const toggleBtn = document.getElementById('toggleAllCertsBtn');
-  const collapsible = document.getElementById('allCertsCollapsible');
-  if (!toggleBtn || !collapsible) return;
-
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = collapsible.classList.contains('open');
-
-    if (!isOpen) {
-      collapsible.classList.add('open');
-      collapsible.setAttribute('aria-hidden', 'false');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.innerHTML = '<span class="cert-btn-text">Show Fewer Certifications &uarr;</span>';
-    } else {
-      collapsible.classList.remove('open');
-      collapsible.setAttribute('aria-hidden', 'true');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.innerHTML = '<span class="cert-btn-text">View All Certifications (18) &rarr;</span>';
-
-      // Keep user oriented if they collapsed after scrolling down
-      const certHeader = document.querySelector('.credentials-block-header');
-      if (certHeader) {
-        const headerRect = certHeader.getBoundingClientRect();
-        if (headerRect.top < 0) {
-          certHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    }
-  });
-}
-
-/* ==========================================================================
-   10. Lightweight Scroll Reveal (Viewport entry animation for grouped blocks)
+   10. Lightweight Viewport Entry Scroll Reveal
    ========================================================================== */
 function initScrollReveal() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
-
-  // On mobile (<=768px), bypass scroll reveal completely so all content is 100% visible on initial load
   if (window.innerWidth <= 768) return;
 
-  // Large grids and multi-item blocks are explicitly excluded to prevent any tall element threshold bugs
   const revealTargets = document.querySelectorAll(
-    '.section-header, .about-text, .about-stats-grid, .about-synergy-banner, ' +
-    '.timeline-item, .portfolio-filter-bar, .yt-spotlight-card, ' +
-    '.skills-grid, .contact-info-panel, .contact-form-card'
+    '.section-header, .about-narrative, .about-stats-stack, .synergy-card, ' +
+    '.exp-card, .creator-spotlight-card, .skill-category-card, .edu-card, ' +
+    '.contact-channels-stack, .contact-form-card'
   );
 
   if (!revealTargets.length) return;
 
   revealTargets.forEach(el => el.classList.add('reveal-on-scroll'));
-
-  // Enable CSS reveal rules now that elements are identified
   document.documentElement.classList.add('js-reveal');
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-revealed');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0,
-    rootMargin: '0px 0px -15px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -20px 0px'
   });
 
   revealTargets.forEach(el => {
@@ -799,48 +739,23 @@ function initScrollReveal() {
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       el.classList.add('is-revealed');
     } else {
-      revealObserver.observe(el);
+      observer.observe(el);
     }
   });
 }
 
 /* ==========================================================================
-   11. Section Navigation Transition (Subtle arrival blur/fade/movement)
+   11. Back to Top Smooth Scroll
    ========================================================================== */
-function initSectionNavTransition() {
-  const navAnchors = document.querySelectorAll('.nav-link, .mobile-nav-link, a[href^="#"]');
-  if (!navAnchors.length) return;
+function initBackToTop() {
+  const backToTopBtn = document.querySelector('.back-to-top-btn');
+  if (!backToTopBtn) return;
 
-  navAnchors.forEach(anchor => {
-    anchor.addEventListener('click', () => {
-      const href = anchor.getAttribute('href');
-      if (!href || href.length < 2 || !href.startsWith('#')) return;
-
-      const targetId = href.substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (!targetSection) return;
-
-      // Update active nav link immediately for crisp feedback
-      const desktopNavLinks = document.querySelectorAll('.nav-link');
-      desktopNavLinks.forEach(link => {
-        if (link.getAttribute('href') === `#${targetId}`) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      // Re-trigger subtle arrival transition
-      targetSection.classList.remove('section-nav-arrival');
-      void targetSection.offsetWidth;
-      targetSection.classList.add('section-nav-arrival');
-
-      setTimeout(() => {
-        targetSection.classList.remove('section-nav-arrival');
-      }, 380);
+  backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 }
-
