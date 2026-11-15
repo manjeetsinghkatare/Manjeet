@@ -1,0 +1,513 @@
+{
+  "disciplines": [
+    {
+      "id": "content",
+      "name": "Content Marketing",
+      "role": "The Storyteller",
+      "mindset": "Looking for guides, educational articles, or entertainment.",
+      "placements": [
+        "Blog posts, podcast channels, video tutorials, eBooks"
+      ],
+      "useCase": "Share helpful stories and guides to teach people about your niche and earn their trust.",
+      "accentColor": "#FF4B12",
+      "aiInfluence": "AI writes content outlines, drafts copies, and formats articles in seconds, shifting the marketer's role from bulk copywriting to editing, positioning, and content direction."
+    },
+    {
+      "id": "seo",
+      "name": "SEO/GEO",
+      "role": "The Visibility Booster",
+      "mindset": "Searching Google for quick answers or solutions.",
+      "placements": [
+        "Google Search, Google Maps (GMB), Bing, AI search tools"
+      ],
+      "useCase": "Help your website show up for free when people search for topics related to your product.",
+      "accentColor": "#4285F4",
+      "aiInfluence": "With Search Generative Experience (SGE) and LLM search engines answering queries directly, marketing has shifted from keyword-stuffing to semantic SEO and Generative Engine Optimization (GEO)."
+    },
+    {
+      "id": "social",
+      "name": "Social Media",
+      "role": "The Community Builder",
+      "mindset": "Scrolling feeds for updates, trending videos, and chats.",
+      "placements": [
+        "Instagram Feed/Reels, LinkedIn, YouTube, TikTok"
+      ],
+      "useCase": "Post behind-the-scenes content, share updates, and talk directly to your community.",
+      "accentColor": "#E1306C",
+      "aiInfluence": "AI tools generate visual concepts, write scripts, and brainstorm hooks at scale. The marketer's core focus has shifted to raw, authentic human storytelling and personal branding."
+    },
+    {
+      "id": "email",
+      "name": "Email Marketing",
+      "role": "The Relationship Nurturer",
+      "mindset": "Checking the personal inbox for updates and newsletters.",
+      "placements": [
+        "Subscriber Inbox (welcome newsletters, weekly guides)"
+      ],
+      "useCase": "Send helpful guides and direct discounts directly to people who subscribed to your list.",
+      "accentColor": "#FFE01B",
+      "aiInfluence": "AI parses subscriber behaviors to dynamically segment lists, craft hyper-personalized subject lines, and schedule emails at optimal individual send-times."
+    },
+    {
+      "id": "chat",
+      "name": "WhatsApp & Chat",
+      "role": "The Instant Helper",
+      "mindset": "Chatting with friends, looking for instant customer support.",
+      "placements": [
+        "WhatsApp Business chat, SMS, website chat widgets"
+      ],
+      "useCase": "Answer product queries instantly to help shoppers decide to make a purchase.",
+      "accentColor": "#25D366",
+      "aiInfluence": "Intelligent LLM conversational agents handle support, lead qualification, and customer questions 24/7 with human-like comprehension, replacing simple rule-based templates."
+    },
+    {
+      "id": "website",
+      "name": "Websites & Landers",
+      "role": "The Digital Home",
+      "mindset": "Looking to purchase, evaluating pricing, reading company history.",
+      "placements": [
+        "Homepage, landing pages, product pages"
+      ],
+      "useCase": "The main online space where customers can look at your work, view prices, and make orders.",
+      "accentColor": "#1700FF",
+      "aiInfluence": "AI-first design lets you generate custom layout code and styling from natural language prompts, allowing marketers to launch, test, and iterate landing pages in minutes."
+    },
+    {
+      "id": "performance-marketing",
+      "name": "Performance Ads",
+      "role": "The Speed Scaler",
+      "mindset": "Highly targeted audiences ready to buy, discover, or take specific actions.",
+      "placements": [
+        "Meta Ads, Google Search Ads, YouTube Ads, LinkedIn campaigns"
+      ],
+      "useCase": "Run paid ad campaigns to systematically scale your traffic, acquire leads, and generate direct revenue.",
+      "accentColor": "#10b981",
+      "aiInfluence": "Smart optimization algorithms like Meta Advantage+ and Google PMax handle targeting and budget allocation. The human moat is now creatives, angles, and speed."
+    },
+    {
+      "id": "affiliate",
+      "name": "Affiliate Marketing",
+      "role": "The Commission Engine",
+      "mindset": "Trusting a recommendation from a creator, blogger, or comparison site they already follow.",
+      "placements": [
+        "Review blogs, YouTube \"best of\" videos, coupon sites, creator link-in-bio"
+      ],
+      "useCase": "Pay partners a commission only when their referral leads to a sale, so you scale reach without paying upfront.",
+      "accentColor": "#8b5cf6",
+      "aiInfluence": "AI now drafts entire comparison articles and review scripts and tracks partner performance at scale, so the marketer's edge shifts to picking trustworthy partners and structuring fair commission deals."
+    }
+  ],
+  "content": [
+    {
+      "id": "video",
+      "name": "Video Content",
+      "role": "The most important format today",
+      "mindset": "People watch videos daily to learn and make choices. Making short and long videos builds deep trust faster than anything else.",
+      "highlights": [
+        "YouTube (Long videos)",
+        "Instagram Reels (Short)",
+        "YouTube Shorts",
+        "Product demonstrations"
+      ],
+      "useCase": "Film a short 2-minute video showing your product in action or explaining a quick lesson. People see your face, hear your voice, and trust your business immediately.",
+      "accentColor": "#ef4444"
+    },
+    {
+      "id": "written",
+      "name": "Written Content",
+      "role": "Answering questions in detail",
+      "mindset": "Write simple, helpful guides and articles on your website so people can find you when they search online.",
+      "highlights": [
+        "Helpful blog articles",
+        "Step-by-step guides",
+        "Question and answer lists",
+        "Client stories"
+      ],
+      "useCase": "Write a step-by-step guide explaining a common question your customers have. When someone searches Google for that question, your article shows up with the answer.",
+      "accentColor": "#3b82f6"
+    },
+    {
+      "id": "social",
+      "name": "Social Media",
+      "role": "Sharing quick tips where people scroll",
+      "mindset": "Publish short, interesting tips and visual posts on social platforms where your target audience scrolls daily.",
+      "highlights": [
+        "LinkedIn text posts",
+        "Instagram slide images",
+        "Quick industry updates",
+        "Replying to comments"
+      ],
+      "useCase": "Take one helpful sentence or graphic from your video or article and share it on LinkedIn or Instagram. This helps you reach people who only have a minute to scroll.",
+      "accentColor": "#10b981"
+    },
+    {
+      "id": "email",
+      "name": "Email Newsletters",
+      "role": "Building a direct and friendly relationship",
+      "mindset": "Send helpful tips, updates, and stories directly to the inbox of people who voluntarily signed up to hear from you.",
+      "highlights": [
+        "Weekly tips emails",
+        "Behind-the-scenes stories",
+        "Special product offers",
+        "Personal notes"
+      ],
+      "useCase": "Send a simple weekly email to your subscribers with three useful tips. Since you own your email list, you do not have to worry about social media algorithms changing.",
+      "accentColor": "#f59e0b"
+    },
+    {
+      "id": "audio",
+      "name": "Audio & Podcasts",
+      "role": "Building connection during daily routines",
+      "mindset": "Create audio episodes to share deeper conversations, interviews, and stories that people can listen to while commuting or working.",
+      "highlights": [
+        "Spotify Podcast",
+        "Apple Podcasts",
+        "Audio lessons",
+        "Guest interviews"
+      ],
+      "useCase": "Record a weekly 15-minute conversation discussing a topic in your industry. Listeners hear your insights and build a strong familiarity with your brand over time.",
+      "accentColor": "#1db954"
+    }
+  ],
+  "seo": [
+    {
+      "id": "on-page",
+      "name": "1. On-Page SEO",
+      "icon": "Layout",
+      "role": "Make your own website easy to read",
+      "mindset": "Organize the words, pictures, and links on your website so search engines can understand what you sell.",
+      "highlights": [
+        "Clear page titles",
+        "Helpful headings",
+        "Fast loading photos",
+        "Simple page links"
+      ],
+      "useCase": "Write simple headings and descriptive text. For example, if you sell cakes in Delhi, your page title should say \"Fresh Chocolate Cakes in Delhi\" instead of just \"Home\". This helps Google show your site to local buyers.",
+      "accentColor": "#10b981"
+    },
+    {
+      "id": "off-page",
+      "name": "2. Off-Page SEO",
+      "icon": "Globe",
+      "role": "Get other trusted sites to recommend you",
+      "mindset": "Get other popular websites and social pages to talk about you and link back to your website.",
+      "highlights": [
+        "Links from other sites",
+        "Social media shares",
+        "Google My Business (Maps)",
+        "Sharing helpful guides"
+      ],
+      "useCase": "When another popular blog links to your website, it acts like a vote of trust. Google sees this vote and ranks your website higher because other trusted people recommend you.",
+      "accentColor": "#3b82f6"
+    },
+    {
+      "id": "ai-search",
+      "name": "3. AI Search (GEO)",
+      "icon": "Cpu",
+      "role": "Help AI tools find and quote your site",
+      "mindset": "Write clear, direct answers to common questions so AI search engines (like ChatGPT or Claude) talk about your brand.",
+      "highlights": [
+        "Short 1-sentence answers",
+        "Simple FAQ lists",
+        "Expert writer bios",
+        "Original facts & numbers"
+      ],
+      "useCase": "Instead of long, confusing paragraphs, write simple answers:<br/>\"Sourdough bread needs 350ml of water for every 500g of flour.\"<br/><br/>AI tools can easily read and quote this direct answer when users ask them questions.",
+      "accentColor": "#f59e0b"
+    }
+  ],
+  "social": [
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "role": "Community groups & local reach",
+      "mindset": "Facebook is excellent for building local communities and groups where members can interact with each other around shared interests.",
+      "highlights": [
+        "Facebook Groups",
+        "Interactive community",
+        "Local discussion boards",
+        "Short videos"
+      ],
+      "useCase": "Create a private Facebook group for local baking enthusiasts to share tips, recipes, and troubleshoot baking problems together.",
+      "accentColor": "#1877f2"
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "role": "Bite-sized visual tips",
+      "mindset": "Keep Instagram content highly visual and quick. Share simple, helpful tips in an engaging and entertaining format.",
+      "highlights": [
+        "Short-form Reels",
+        "Visual hooks",
+        "Bite-sized design",
+        "High engagement"
+      ],
+      "useCase": "Create a 30-second Reel showing a quick \"before and after\" of a website layout change, using a clean screen recording.",
+      "accentColor": "#e1306c"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "role": "Deep tutorials & teaching",
+      "mindset": "Use YouTube to share detailed, step-by-step guides. If you learn something valuable, explain the complete process in a longer format.",
+      "highlights": [
+        "Long-form video",
+        "Step-by-step tutorials",
+        "Over-the-shoulder guides",
+        "Deep skill sharing"
+      ],
+      "useCase": "Record a 10-minute video showing exactly how you set up a Meta Ads campaign from scratch, sharing your screen and explanation.",
+      "accentColor": "#ef4444"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "role": "Technical & industry insights",
+      "mindset": "LinkedIn is the place for professional, data-backed writing. Share case studies, technical breakdowns, and direct-response lessons.",
+      "highlights": [
+        "Technical breakdowns",
+        "Case studies",
+        "Text-first posts",
+        "Professional networking"
+      ],
+      "useCase": "Write a post detailing how a specific copy adjustment improved click rates by 15% on a client's ad campaign last week.",
+      "accentColor": "#0a66c2"
+    },
+    {
+      "id": "x",
+      "name": "X (Twitter)",
+      "role": "Real-time conversation & trends",
+      "mindset": "X is designed for short, fast updates and joining real-time conversations or debates in your industry.",
+      "highlights": [
+        "Short text updates",
+        "Topic threads",
+        "Real-time discussions",
+        "Industry news"
+      ],
+      "useCase": "Post a short thread of 3 quick tips about your daily learning, tagging other specialists to start a discussion.",
+      "accentColor": "#000000"
+    }
+  ],
+  "email": [
+    {
+      "id": "list-building",
+      "name": "List Building",
+      "icon": "Users",
+      "role": "Where it all starts",
+      "mindset": "You cannot email people who never gave you permission. List building is offering something valuable enough (a free guide, a discount, a checklist) that people willingly hand over their email. A small, permission-based list beats a huge bought one every single time, because these are people who actually want to hear from you.",
+      "highlights": [
+        "Offer a lead magnet",
+        "Signup forms on your site",
+        "Permission, never bought lists",
+        "Quality over raw size"
+      ],
+      "useCase": "A bakery offers “10 easy weekend recipes” in exchange for an email, and grows a list of exactly the people who love baking.",
+      "accentColor": "#ef4444"
+    },
+    {
+      "id": "segmentation",
+      "name": "Segmentation",
+      "icon": "Filter",
+      "role": "Send the right message",
+      "mindset": "Not everyone on your list wants the same thing. Segmentation means grouping people by what they care about or what they have done, so a first-time subscriber and a repeat buyer get different emails. This one habit is what separates spammy blasts from emails people actually open.",
+      "highlights": [
+        "Group by interest",
+        "Group by behavior",
+        "New vs. returning buyers",
+        "Relevant beats frequent"
+      ],
+      "useCase": "You send new subscribers a welcome story and past buyers a “you might also like” offer. Same list, two very different messages.",
+      "accentColor": "#f97316"
+    },
+    {
+      "id": "automation",
+      "name": "Automation / Flows",
+      "icon": "Workflow",
+      "role": "Emails that send themselves",
+      "mindset": "A flow is a sequence of emails that triggers on its own when someone does something. Sign up and a welcome series starts. Abandon a cart and a reminder goes out. You build it once and it runs forever. This is where email quietly makes money without you touching it.",
+      "highlights": [
+        "Welcome series",
+        "Abandoned-cart reminders",
+        "Post-purchase follow-ups",
+        "Set up once, runs forever"
+      ],
+      "useCase": "Someone adds a product, does not buy, and three hours later gets a gentle “still thinking about it?” email that recovers the sale automatically.",
+      "accentColor": "#eab308"
+    },
+    {
+      "id": "broadcasts",
+      "name": "Broadcasts / Campaigns",
+      "icon": "Megaphone",
+      "role": "Your one-to-many sends",
+      "mindset": "Broadcasts are the emails you send on purpose to a group at a specific time: a newsletter, a product launch, a festival offer. Unlike flows, these are timely and manual. They keep your list warm and remind people you exist.",
+      "highlights": [
+        "Weekly newsletter",
+        "Launch announcements",
+        "Seasonal offers",
+        "Keeps the list warm"
+      ],
+      "useCase": "A Diwali sale email sent to your whole list on the same morning, driving a spike of orders in a single day.",
+      "accentColor": "#3b82f6"
+    },
+    {
+      "id": "deliverability",
+      "name": "Deliverability",
+      "icon": "ShieldCheck",
+      "role": "Actually reaching the inbox",
+      "mindset": "None of the above matters if your emails land in spam. Deliverability is the technical health that keeps you in the primary inbox: proper sender setup, a clean list, and content people actually engage with. Ignore it and even your best email reaches nobody.",
+      "highlights": [
+        "Verify your sender domain",
+        "Keep the list clean",
+        "Avoid spam-trigger words",
+        "Engagement protects reputation"
+      ],
+      "useCase": "You remove subscribers who have not opened anything in six months, and your open rate jumps because inbox providers now trust you more.",
+      "accentColor": "#10b981"
+    }
+  ],
+  "performance": [
+    {
+      "id": "search-ads",
+      "name": "Search Ads",
+      "role": "The High-Intent Interceptor",
+      "mindset": "Actively searching for a specific product to buy or service to hire.",
+      "placements": [
+        "Google Search paid positions, Bing Ads results"
+      ],
+      "useCase": "Show your link at the top of Google when a customer is ready to buy.",
+      "accentColor": "#4285F4"
+    },
+    {
+      "id": "social-ads",
+      "name": "Social Ads",
+      "role": "The Visual Attention Grabber",
+      "mindset": "Scrolling feeds for entertainment, open to discovering new things.",
+      "placements": [
+        "Instagram Reels ads, TikTok feed ads, Facebook sponsored posts"
+      ],
+      "useCase": "Grab attention with visual videos and images to introduce your product.",
+      "accentColor": "#1877F2"
+    },
+    {
+      "id": "retail-ads",
+      "name": "Retail & Shop Ads",
+      "role": "The Storefront Placer",
+      "mindset": "Browsing shopping platforms and actively comparing prices.",
+      "placements": [
+        "Amazon sponsored products, Google Shopping carousel"
+      ],
+      "useCase": "Show product pictures and prices right next to competing brands.",
+      "accentColor": "#FF9900"
+    },
+    {
+      "id": "native-ads",
+      "name": "Native Ads",
+      "role": "The Content Recommender",
+      "mindset": "Reading blog articles, news sites, or reviews.",
+      "placements": [
+        "\"Recommended Articles\" widgets at the bottom of news sites"
+      ],
+      "useCase": "Promote an interesting blog post that naturally links to your product.",
+      "accentColor": "#0084FF"
+    },
+    {
+      "id": "creator-ads",
+      "name": "Creator Partner Ads",
+      "role": "The Trusted Voice",
+      "mindset": "Watching trusted creators share recommendations and reviews.",
+      "placements": [
+        "Sponsored TikTok videos, creator-led Instagram Ads"
+      ],
+      "useCase": "Run paid promotions using a creator's review of your product.",
+      "accentColor": "#000000"
+    },
+    {
+      "id": "affiliate-ads",
+      "name": "Affiliate Marketing",
+      "role": "The Commission Partner",
+      "mindset": "Reading top-10 lists, review sites, or comparison blogs.",
+      "placements": [
+        "Independent blog product reviews, coupon aggregators"
+      ],
+      "useCase": "Pay external review websites a percentage commission only when they drive a sale.",
+      "accentColor": "#E1306C"
+    }
+  ],
+  "affiliate": [
+    {
+      "id": "find-programs",
+      "name": "Find Programs",
+      "icon": "Search",
+      "role": "Where to start",
+      "mindset": "Affiliate programs live in two places: big networks (Amazon Associates and India-specific ones) that list thousands of products, and direct programs run by individual brands you already love. Networks are easiest for beginners; direct programs usually pay more. Pick your niche first, then find the programs that fit it.",
+      "highlights": [
+        "Big networks vs. direct brands",
+        "Easiest entry: Amazon Associates",
+        "Direct programs pay more",
+        "Pick your niche first"
+      ],
+      "useCase": "A tech reviewer joins Amazon Associates plus a few direct laptop-brand programs, so every product they mention can earn.",
+      "accentColor": "#ef4444"
+    },
+    {
+      "id": "pick-products",
+      "name": "Pick the Right Products",
+      "icon": "Package",
+      "role": "Relevance beats commission",
+      "mindset": "The biggest beginner mistake is chasing the highest commission instead of the best fit. Promote only products your audience genuinely needs and you would recommend for free. A 5% commission on something they actually buy beats 40% on something they never will.",
+      "highlights": [
+        "Fit over commission size",
+        "Only what you would recommend anyway",
+        "Match your audience's real needs",
+        "Trust is the asset"
+      ],
+      "useCase": "A fitness creator promotes a ₹2,000 supplement their followers already ask about, not a random ₹50,000 course nobody wants.",
+      "accentColor": "#f97316"
+    },
+    {
+      "id": "create-content",
+      "name": "Create Honest Content",
+      "icon": "FileText",
+      "role": "Trust is the product",
+      "mindset": "Affiliate income comes from content that helps people decide: honest reviews, real comparisons, and tutorials. The word “honest” is the whole game. Show the downsides too. People can feel a fake recommendation, and one burns your credibility for years.",
+      "highlights": [
+        "Reviews and comparisons",
+        "Show the downsides too",
+        "Tutorials that solve a problem",
+        "Never fake enthusiasm"
+      ],
+      "useCase": "A “best budget phones under ₹15,000” video that honestly names each phone's weak points earns more, because viewers trust the picks.",
+      "accentColor": "#eab308"
+    },
+    {
+      "id": "track-disclose",
+      "name": "Track & Disclose",
+      "icon": "Activity",
+      "role": "Stay legal and measurable",
+      "mindset": "Two non-negotiables. Track: use your unique affiliate links so every sale is credited to you. Disclose: tell your audience clearly that you earn a commission. Disclosure is legally required in most places and, done openly, actually builds trust rather than hurting it.",
+      "highlights": [
+        "Use your unique tracking links",
+        "Clearly disclose the commission",
+        "Disclosure builds trust",
+        "Watch which links convert"
+      ],
+      "useCase": "A blogger adds a one-line “this post contains affiliate links” note and sees no drop in clicks, because readers respect the honesty.",
+      "accentColor": "#3b82f6"
+    },
+    {
+      "id": "scale",
+      "name": "Scale What Works",
+      "icon": "TrendingUp",
+      "role": "Double down",
+      "mindset": "Once you see which content and which products actually convert, pour your energy there. Update your winning posts, make more of what works, and, once you have proof, negotiate higher commission rates directly with the brands you already sell for.",
+      "highlights": [
+        "Expand your winning content",
+        "Make more of what converts",
+        "Negotiate better rates",
+        "Refresh old winners"
+      ],
+      "useCase": "A comparison post that quietly earns every month gets updated yearly and becomes a compounding income source.",
+      "accentColor": "#10b981"
+    }
+  ]
+}

@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/blog-interactive.css">
 
   <script>
     (function() {
@@ -136,8 +137,83 @@
         </div>
       </article>
 
+      <!-- Interactive Category Filter & Live Search Toolbar -->
+      <div class="blog-filter-bar" role="toolbar" aria-label="Article Filters">
+        <div class="blog-category-pills">
+          <button type="button" class="blog-filter-pill is-active" data-filter="all">All Topics</button>
+          <button type="button" class="blog-filter-pill" data-filter="growth">Growth &amp; Strategy</button>
+          <button type="button" class="blog-filter-pill" data-filter="career">Career &amp; Salary</button>
+          <button type="button" class="blog-filter-pill" data-filter="seo">Organic SEO</button>
+          <button type="button" class="blog-filter-pill" data-filter="healthcare">Healthcare SEO</button>
+          <button type="button" class="blog-filter-pill" data-filter="performance">Performance Ads</button>
+          <button type="button" class="blog-filter-pill" data-filter="creative">Creative Strategy</button>
+        </div>
+
+        <div class="blog-search-box">
+          <svg class="blog-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="blog-search-input" placeholder="Search case studies & topics..." aria-label="Search articles">
+        </div>
+      </div>
+
       <!-- Articles Grid (All Published with Real Case Study Links) -->
       <div class="blog-grid">
+        <!-- Masterclass Guide: Complete Digital Marketing Guide -->
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=complete-digital-marketing-guide'">
+          <div class="blog-media-wrap">
+            <img src="assets/images/blog/complete_digital_marketing_guide.svg" alt="The Complete Digital Marketing Guide 2026" loading="lazy" decoding="async">
+            <span class="blog-status-badge" style="background: rgba(6, 182, 212, 0.18); color: #38bdf8;">Masterclass Guide</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-cat-date">
+              <span class="blog-cat">Growth &amp; Strategy</span>
+              <span>•</span>
+              <span>November 2026</span>
+            </div>
+            <h3 class="blog-title">
+              <a href="article.html?id=complete-digital-marketing-guide" style="color: inherit; text-decoration: none;">
+                The Complete Digital Marketing Guide (2026): 8 Core Disciplines from Brand-Building to Performance Ads
+              </a>
+            </h3>
+            <p class="blog-excerpt">
+              A comprehensive beginner-to-advanced roadmap deconstructing Content Marketing, SEO &amp; GEO, Social Media, Email, WhatsApp Conversational Channels, Landing Pages, Paid Ads, and Affiliate loops.
+            </p>
+            <div class="blog-footer">
+              <span>14 min read</span>
+              <a href="article.html?id=complete-digital-marketing-guide" class="blog-read-link" onclick="event.stopPropagation()">Read Article &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lead Article: Digital Marketing Salary in India -->
+        <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=digital-marketing-salary-in-india'">
+          <div class="blog-media-wrap">
+            <img src="assets/images/blog/digital_marketing_salary_in_india.svg" alt="Digital Marketing Salary in India 2026 Guide" loading="lazy" decoding="async">
+            <span class="blog-status-badge" style="background: rgba(79, 70, 229, 0.18); color: #818cf8;">Salary Guide</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-cat-date">
+              <span class="blog-cat">Career Intelligence</span>
+              <span>•</span>
+              <span>November 2026</span>
+            </div>
+            <h3 class="blog-title">
+              <a href="article.html?id=digital-marketing-salary-in-india" style="color: inherit; text-decoration: none;">
+                Digital Marketing Salary in India: 2026 Comprehensive Career &amp; Compensation Guide
+              </a>
+            </h3>
+            <p class="blog-excerpt">
+              The definitive compensation breakdown across freshers, mid-level performance marketers, and growth leads in India, covering city tiers, ROAS premiums, and in-demand skills.
+            </p>
+            <div class="blog-footer">
+              <span>11 min read</span>
+              <a href="article.html?id=digital-marketing-salary-in-india" class="blog-read-link" onclick="event.stopPropagation()">Read Article &rarr;</a>
+            </div>
+          </div>
+        </article>
+
         <!-- Article 1: Clinical SEO -->
         <article class="blog-card" style="cursor: pointer;" onclick="window.location.href='article.html?id=medical-clinical-seo'">
           <div class="blog-media-wrap">
@@ -271,6 +347,7 @@
     </div>
   </footer>
 
+  <script src="js/blog-engine.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

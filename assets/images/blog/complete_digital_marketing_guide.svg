@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" style="background:#0b0f19;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+
+    <!-- Subtle Ambient Glows -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#0ea5e9" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="softGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="1" fill="#334155" fill-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="675" fill="url(#bgCanvas)"/>
+  <rect width="1200" height="675" fill="url(#softGrid)"/>
+
+  <!-- Soft Ambient Glow behind text -->
+  <circle cx="600" cy="337" r="450" fill="url(#centerGlow)"/>
+
+  <!-- Background Tools Cloud -->
+  <g id="toolsCloud">
+    
+    <g transform="translate(80, 110)" opacity="0.45">
+      <rect width="164" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#4285F4" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#4285F4" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#4285F4" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">G</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Google Ads</text>
+    </g>
+
+    <g transform="translate(260, 70)" opacity="0.45">
+      <rect width="142" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#0668E1" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#0668E1" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#0668E1" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">M</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Meta Ads</text>
+    </g>
+
+    <g transform="translate(120, 190)" opacity="0.45">
+      <rect width="153" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#21759B" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#21759B" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#21759B" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">W</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">WordPress</text>
+    </g>
+
+    <g transform="translate(880, 80)" opacity="0.45">
+      <rect width="131" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#FF7A59" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#FF7A59" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#FF7A59" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">H</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">HubSpot</text>
+    </g>
+
+    <g transform="translate(1040, 130)" opacity="0.45">
+      <rect width="153" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#FFE01B" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#FFE01B" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#FFE01B" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">✉</text>
+      <text x="40" y="26" fill="#000" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Mailchimp</text>
+    </g>
+
+    <g transform="translate(920, 180)" opacity="0.45">
+      <rect width="153" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#10B981" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#10B981" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#10B981" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">⚲</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">SEO &amp; GEO</text>
+    </g>
+
+    <g transform="translate(60, 350)" opacity="0.45">
+      <rect width="131" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#146EF5" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#146EF5" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#146EF5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">W</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Webflow</text>
+    </g>
+
+    <g transform="translate(140, 440)" opacity="0.45">
+      <rect width="153" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#F59E0B" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#F59E0B" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">▲</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Analytics</text>
+    </g>
+
+    <g transform="translate(1010, 320)" opacity="0.45">
+      <rect width="131" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#FF0000" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#FF0000" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#FF0000" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">▶</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">YouTube</text>
+    </g>
+
+    <g transform="translate(940, 420)" opacity="0.45">
+      <rect width="142" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#0A66C2" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#0A66C2" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#0A66C2" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">in</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">LinkedIn</text>
+    </g>
+
+    <g transform="translate(220, 540)" opacity="0.45">
+      <rect width="142" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#25D366" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#25D366" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#25D366" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">💬</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">WhatsApp</text>
+    </g>
+
+    <g transform="translate(420, 580)" opacity="0.45">
+      <rect width="131" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#95BF47" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#95BF47" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#95BF47" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">S</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Shopify</text>
+    </g>
+
+    <g transform="translate(640, 580)" opacity="0.45">
+      <rect width="164" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#FF9900" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#FF9900" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#FF9900" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">A</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">Amazon Ads</text>
+    </g>
+
+    <g transform="translate(840, 540)" opacity="0.45">
+      <rect width="164" height="42" rx="21" fill="#1e293b" fill-opacity="0.6" stroke="#FE2C55" stroke-opacity="0.4" stroke-width="1.2"/>
+      <circle cx="21" cy="21" r="11" fill="#FE2C55" fill-opacity="0.25"/>
+      <text x="21" y="25" text-anchor="middle" fill="#FE2C55" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800">♪</text>
+      <text x="40" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.2">TikTok Ads</text>
+    </g>
+  </g>
+
+  <!-- Central Content Area -->
+  <!-- Top Category Chip -->
+  <g transform="translate(600, 195)">
+    <rect x="-140" y="-18" width="280" height="36" rx="18" fill="#4f46e5" fill-opacity="0.18" stroke="#6366f1" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle cx="-116" cy="0" r="4.5" fill="#38bdf8"/>
+    <text x="-98" y="5" fill="#a5b4fc" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">COMPLETE MASTERCLASS</text>
+  </g>
+
+  <!-- Main Title: 'The Complete Digital Marketing Guide 2026' -->
+  <text x="600" y="300" text-anchor="middle" fill="url(#textGrad)" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="64" font-weight="800" letter-spacing="-1.5">
+    The Complete
+  </text>
+  <text x="600" y="375" text-anchor="middle" fill="url(#textGrad)" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="64" font-weight="800" letter-spacing="-1.5">
+    Digital Marketing Guide 2026
+  </text>
+
+  <!-- Minimal Subtitle -->
+  <text x="600" y="445" text-anchor="middle" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="19" font-weight="500" letter-spacing="0.2">
+    8 Core Disciplines from Brand-Building to Performance ROAS
+  </text>
+
+  <!-- Subtle Bottom Author Mark -->
+  <g transform="translate(600, 615)">
+    <text text-anchor="middle" fill="#64748b" font-family="'Inter', sans-serif" font-size="13" font-weight="500" letter-spacing="0.5">
+      Curated &amp; Authored by <tspan fill="#cbd5e1" font-weight="700">Manjeet Singh Katare</tspan> • 14 Min Comprehensive Read
+    </text>
+  </g>
+</svg>
