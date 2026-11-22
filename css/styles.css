@@ -2855,6 +2855,48 @@ button {
   background-color: var(--bg-page);
 }
 
+/* Modal Interactive Gallery Switcher */
+.modal-gallery-nav {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.85rem 2.25rem 0.25rem 2.25rem;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal-gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.modal-gallery-btn:hover {
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  border-color: var(--accent-border);
+}
+
+.modal-gallery-btn.active {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
 .modal-content-body {
   padding: 2.25rem;
 }

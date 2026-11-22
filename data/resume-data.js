@@ -158,6 +158,10 @@ const RESUME_DATA = {
       desc: "Created and managed a channel featuring music remixes, EDM tracks, montages, and After Effects tutorials."
     },
     {
+      title: "MaarstOn VPN (Web & Windows Desktop Client)",
+      desc: "Architected a dual-platform VPN ecosystem featuring an official web platform and a native Windows desktop client with 693+ global nodes across 42 countries and 300+ 100% online verified routes."
+    },
+    {
       title: "MaarstOn Craft",
       desc: "Built a browser-based image compression tool."
     },

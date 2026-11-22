@@ -257,6 +257,22 @@ const projectDetails = {
   },
 
   // --- Featured Projects & Simulations ---
+  'maarston-vpn': {
+    title: 'MaarstOn VPN — High-Speed Global Network & Windows Desktop Client',
+    category: 'Web & PC Software / Network Security',
+    org: 'Personal Project (MaarstOn Network Ecosystem)',
+    role: 'Lead Architect, Network Engineer & Full-Stack Developer',
+    tools: 'Windows Desktop Client (OpenVPN TCP) · Web Application (Vercel) · AES-256 / TLS Encryption · Global Node Discovery · Live Ping & Bandwidth Telemetry',
+    outcome: '693+ Verified Online Nodes across 42 Countries · 300+ 100% Online Working Routes · 1-Click Free Multi-Country Connectivity',
+    image: 'assets/images/work/maarston_vpn_showcase.jpg',
+    liveUrl: 'https://maarston-vpn.vercel.app/',
+    gallery: [
+      { label: '💻 Windows Desktop App', image: 'assets/images/work/maarston_vpn_desktop.jpg' },
+      { label: '🌐 Official Web Platform', image: 'assets/images/work/maarston_vpn_website.jpg' },
+      { label: '🖼️ Dual Ecosystem View', image: 'assets/images/work/maarston_vpn_showcase.jpg' }
+    ],
+    desc: 'MaarstOn VPN is a comprehensive, dual-platform privacy and network routing ecosystem featuring both an official high-speed web portal and a native Windows desktop client. Manjeet independently discovered, tested, and cataloged live IP addresses and proxy routing nodes from across the globe, curating over 693 verified nodes across 42 countries into the platform so anyone can connect to any country\'s VPN in just one click—completely free.\n\nKey Engineering & Architectural Features:\n• 1-Click Global Network Freedom: Connect to hundreds of websites, regional routing nodes, and country postal codes in a single click with zero registration hurdles.\n• 300+ 100% Working Verified Nodes: Over 300 guaranteed active, low-ping nodes pre-vetted for maximum reliability, speed, and uptime.\n• Native Windows Desktop Application: Clean dark-mode dashboard displaying live connection status, real-time ping (e.g., 65ms–80ms), upload/download throughput meters (OpenVPN TCP), country groupings, and silent background system tray routing.\n• Official Web Platform (maarston-vpn.vercel.app): Minimalist black & white pure interface designed for fast setup distribution, live node telemetry, and transparent routing information.\n• Enterprise Encryption & Privacy: AES-256 / TLS military-grade cryptographic tunnels with strict zero-logging policy ensuring complete digital privacy.'
+  },
   'maarston-craft-compress': {
     title: 'MaarstOn Craft — Image Compress',
     category: 'Web Tool / Development',
@@ -508,6 +524,31 @@ function initModalLightbox() {
     imgElem.src = data.image;
     imgElem.alt = data.title;
 
+    const galleryNav = document.getElementById('modalGalleryNav');
+    if (galleryNav) {
+      galleryNav.innerHTML = '';
+      if (data.gallery && data.gallery.length > 1) {
+        galleryNav.style.display = 'flex';
+        data.gallery.forEach((item, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'modal-gallery-btn' + (idx === 0 ? ' active' : '');
+          btn.textContent = item.label;
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            imgElem.src = item.image;
+            imgElem.alt = item.label + ' - ' + data.title;
+            galleryNav.querySelectorAll('.modal-gallery-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          });
+          galleryNav.appendChild(btn);
+        });
+        imgElem.src = data.gallery[0].image;
+      } else {
+        galleryNav.style.display = 'none';
+      }
+    }
+
     const liveWrap = document.getElementById('modalLiveWrap');
     const liveBtn = document.getElementById('modalLiveBtn');
     if (liveWrap && liveBtn) {
@@ -529,6 +570,11 @@ function initModalLightbox() {
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    const galleryNav = document.getElementById('modalGalleryNav');
+    if (galleryNav) {
+      galleryNav.style.display = 'none';
+      galleryNav.innerHTML = '';
+    }
   }
 
   triggers.forEach(el => {
